@@ -1,0 +1,1898 @@
+Program.Sub.ScreenSU.Start
+Gui.F_Cali..Create
+Gui.F_Cali..Caption("California OT & DT Rules")
+Gui.F_Cali..Size(6450,9990)
+Gui.F_Cali..MinX(0)
+Gui.F_Cali..MinY(0)
+Gui.F_Cali..Position(0,0)
+Gui.F_Cali..BackColor(-2147483633)
+Gui.F_Cali..MousePointer(0)
+Gui.F_Cali..Event(UnLoad,F_Cali_UnLoad)
+Gui.F_Cali.cmdSave.Create(Button)
+Gui.F_Cali.cmdSave.Size(855,375)
+Gui.F_Cali.cmdSave.Position(180,9240)
+Gui.F_Cali.cmdSave.Caption("Save")
+Gui.F_Cali.cmdSave.Event(Click,cmdSave_Click)
+Gui.F_Cali.txtWDReg.Create(TextBox,"0.00",True,900,300,0,1770,1935,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtWDReg.NumericOnly(True)
+Gui.F_Cali.txtWDReg.DefaultValue("")
+Gui.F_Cali.txtWDOver.Create(TextBox,"0.00",True,900,300,0,3060,1935,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtWDOver.NumericOnly(True)
+Gui.F_Cali.txtWDOver.DefaultValue("")
+Gui.F_Cali.lbLBasedOT.Create(Label,"Pay Overtime Based On:",True,2340,255,0,585,180,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.chkDaily.Create(CheckBox)
+Gui.F_Cali.chkDaily.Size(1965,360)
+Gui.F_Cali.chkDaily.Position(495,495)
+Gui.F_Cali.chkDaily.Caption("Daily Hours")
+Gui.F_Cali.chkDaily.Event(Click,chkDaily_Click)
+Gui.F_Cali.chkWeekly.Create(CheckBox)
+Gui.F_Cali.chkWeekly.Size(1560,360)
+Gui.F_Cali.chkWeekly.Position(2865,495)
+Gui.F_Cali.chkWeekly.Caption("Weekly Hours")
+Gui.F_Cali.chkWeekly.Event(Click,chkWeekly_Click)
+Gui.F_Cali.chkWeekly.Enabled(False)
+Gui.F_Cali.txtWDDbl.Create(TextBox,"0.00",True,900,300,0,4395,1935,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtWDDbl.NumericOnly(True)
+Gui.F_Cali.txtWDDbl.DefaultValue("")
+Gui.F_Cali.lblWeekday.Create(Label,"Weekday",True,1125,255,0,375,2010,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblWeekly.Create(Label,"Weekly",True,1125,255,0,375,2490,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.txtWLReg.Create(TextBox,"0.00",True,900,300,0,1770,2415,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtWLReg.NumericOnly(True)
+Gui.F_Cali.txtWLReg.DefaultValue("")
+Gui.F_Cali.txtWLOver.Create(TextBox,"0.00",True,900,300,0,3060,2415,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtWLOver.NumericOnly(True)
+Gui.F_Cali.txtWLOver.DefaultValue("")
+Gui.F_Cali.txtWLDbl.Create(TextBox,"0.00",True,900,300,0,4395,2415,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtWLDbl.NumericOnly(True)
+Gui.F_Cali.txtWLDbl.DefaultValue("")
+Gui.F_Cali.lblSaturday.Create(Label,"Saturday",True,1125,255,0,375,2955,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.txtSatReg.Create(TextBox,"0.00",True,900,300,0,1770,2880,True,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtSatReg.NumericOnly(True)
+Gui.F_Cali.txtSatReg.DefaultValue("")
+Gui.F_Cali.txtSatOver.Create(TextBox,"0.00",True,900,300,0,3060,2880,True,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtSatOver.NumericOnly(True)
+Gui.F_Cali.txtSatOver.DefaultValue("")
+Gui.F_Cali.txtSatDbl.Create(TextBox,"0.00",True,900,300,0,4395,2880,True,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtSatDbl.NumericOnly(True)
+Gui.F_Cali.txtSatDbl.DefaultValue("")
+Gui.F_Cali.lblSunday.Create(Label,"Sunday",True,1125,255,0,375,3435,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.txtSunReg.Create(TextBox,"0.00",True,900,300,0,1770,3360,True,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtSunReg.NumericOnly(True)
+Gui.F_Cali.txtSunReg.DefaultValue("")
+Gui.F_Cali.txtSunOver.Create(TextBox,"0.00",True,900,300,0,3060,3360,True,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtSunOver.NumericOnly(True)
+Gui.F_Cali.txtSunOver.DefaultValue("")
+Gui.F_Cali.txtSunDbl.Create(TextBox,"0.00",True,900,300,0,4395,3360,True,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtSunDbl.NumericOnly(True)
+Gui.F_Cali.txtSunDbl.DefaultValue("")
+Gui.F_Cali.lblHoliday.Create(Label,"Holiday",True,1125,255,0,375,3915,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.txtHolReg.Create(TextBox,"0.00",True,900,300,0,1770,3840,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtHolReg.NumericOnly(True)
+Gui.F_Cali.txtHolReg.DefaultValue("")
+Gui.F_Cali.txtHolOver.Create(TextBox,"0.00",True,900,300,0,3060,3840,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtHolOver.NumericOnly(True)
+Gui.F_Cali.txtHolOver.DefaultValue("")
+Gui.F_Cali.txtHolDbl.Create(TextBox,"0.00",True,900,300,0,4395,3840,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtHolDbl.NumericOnly(True)
+Gui.F_Cali.txtHolDbl.DefaultValue("")
+Gui.F_Cali.lblHeader1.Create(Label,"Max Hours For Regular and Overtime Calcluation",True,4545,255,0,465,1275,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblReg.Create(Label,"Regular",True,900,255,0,1785,1620,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblOver.Create(Label,"1 1/2 Time",True,900,255,0,3060,1620,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblDbl.Create(Label,"Double",True,900,255,0,4380,1620,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.chkOverride.Create(CheckBox)
+Gui.F_Cali.chkOverride.Size(4530,360)
+Gui.F_Cali.chkOverride.Position(540,4305)
+Gui.F_Cali.chkOverride.Caption("Override Ot by Shift")
+Gui.F_Cali.chkOverride.Enabled(False)
+Gui.F_Cali.lblNote1.Create(Label,"NOTE: Any hours over the specified amount in each field will roll over into the",True,5835,240,0,225,4785,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNote2.Create(Label,"next field for that category. If no values are entered for Regular, 1 1/2, or",True,5835,240,0,270,4995,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNote3.Create(Label,"Double Time, all hours for that category will be paid as Regular Time.",True,5835,240,0,270,5220,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblHeader2.Create(Label,"Include In Overtime Calculations",True,2835,255,0,600,5820,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.chk1.Create(CheckBox)
+Gui.F_Cali.chk1.Size(1560,360)
+Gui.F_Cali.chk1.Position(1065,6120)
+Gui.F_Cali.chk1.Caption("REGULAR")
+Gui.F_Cali.chk2.Create(CheckBox)
+Gui.F_Cali.chk2.Size(1560,360)
+Gui.F_Cali.chk2.Position(1065,6480)
+Gui.F_Cali.chk2.Caption("SICK")
+Gui.F_Cali.chk3.Create(CheckBox)
+Gui.F_Cali.chk3.Size(1560,360)
+Gui.F_Cali.chk3.Position(1065,6825)
+Gui.F_Cali.chk3.Caption("VACATION")
+Gui.F_Cali.chk4.Create(CheckBox)
+Gui.F_Cali.chk4.Size(1560,360)
+Gui.F_Cali.chk4.Position(1065,7185)
+Gui.F_Cali.chk4.Caption("HOLIDAY")
+Gui.F_Cali.chk5.Create(CheckBox)
+Gui.F_Cali.chk5.Size(1560,360)
+Gui.F_Cali.chk5.Position(1065,7545)
+Gui.F_Cali.chk5.Caption("BONUS")
+Gui.F_Cali.lblNum1.Create(Label,"1",True,255,255,0,735,6210,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNum2.Create(Label,"2",True,255,255,0,735,6555,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNum3.Create(Label,"3",True,255,255,0,735,6915,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNum4.Create(Label,"4",True,255,255,0,735,7275,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lbl5.Create(Label,"5",True,255,255,0,735,7635,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNum6.Create(Label,"6",True,255,255,0,3600,6225,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNum10.Create(Label,"10",True,255,255,0,3540,7650,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNum9.Create(Label,"9",True,255,255,0,3600,7290,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNum8.Create(Label,"8",True,255,255,0,3600,6930,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.lblNum7.Create(Label,"7",True,255,255,0,3600,6570,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.chk10.Create(CheckBox)
+Gui.F_Cali.chk10.Size(1560,360)
+Gui.F_Cali.chk10.Position(3930,7560)
+Gui.F_Cali.chk9.Create(CheckBox)
+Gui.F_Cali.chk9.Size(1560,360)
+Gui.F_Cali.chk9.Position(3930,7200)
+Gui.F_Cali.chk8.Create(CheckBox)
+Gui.F_Cali.chk8.Size(1560,360)
+Gui.F_Cali.chk8.Position(3930,6840)
+Gui.F_Cali.chk7.Create(CheckBox)
+Gui.F_Cali.chk7.Size(1560,360)
+Gui.F_Cali.chk7.Position(3930,6495)
+Gui.F_Cali.chk6.Create(CheckBox)
+Gui.F_Cali.chk6.Size(1560,360)
+Gui.F_Cali.chk6.Position(3930,6135)
+Gui.F_Cali.lblHoliHead.Create(Label,"Holiday Hours",True,1935,255,0,420,8160,True,0,"Arial",8,-2147483633,0)
+Gui.F_Cali.optShift.Create(Option)
+Gui.F_Cali.optShift.Size(1350,255)
+Gui.F_Cali.optShift.Position(600,8445)
+Gui.F_Cali.optShift.Caption("Shift Hours")
+Gui.F_Cali.optShift.ControlGroup(1)
+Gui.F_Cali.optShift.Event(Click,optShift_Click)
+Gui.F_Cali.optShift.Enabled(False)
+Gui.F_Cali.optCalendar.Create(Option)
+Gui.F_Cali.optCalendar.Size(1575,255)
+Gui.F_Cali.optCalendar.Position(1980,8445)
+Gui.F_Cali.optCalendar.Caption("Calendar Hours")
+Gui.F_Cali.optCalendar.ControlGroup(1)
+Gui.F_Cali.optCalendar.Event(Click,optShift_Click)
+Gui.F_Cali.optCalendar.Enabled(False)
+Gui.F_Cali.optSpecify.Create(Option)
+Gui.F_Cali.optSpecify.Size(1575,255)
+Gui.F_Cali.optSpecify.Position(3660,8445)
+Gui.F_Cali.optSpecify.Caption("Specify Hours")
+Gui.F_Cali.optSpecify.ControlGroup(1)
+Gui.F_Cali.optSpecify.Event(Click,optShift_Click)
+Gui.F_Cali.optSpecify.Enabled(False)
+Gui.F_Cali.txtSpecHrs.Create(TextBox,"0",True,675,300,0,5145,8430,False,0,"Arial",8,-2147483643,1)
+Gui.F_Cali.txtSpecHrs.NumericOnly(True)
+Gui.F_Cali.txtSpecHrs.DefaultValue("")
+Gui.F_Cali.chk11.Create(CheckBox)
+Gui.F_Cali.chk11.Size(4035,360)
+Gui.F_Cali.chk11.Position(600,8715)
+Gui.F_Cali.chk11.Caption("Do not pay holiday if shift hours is zero")
+Gui.F_Cali.chk11.Enabled(False)
+Gui.F_Cali.cmdExit.Create(Button)
+Gui.F_Cali.cmdExit.Size(855,375)
+Gui.F_Cali.cmdExit.Position(1095,9240)
+Gui.F_Cali.cmdExit.Caption("Exit")
+Gui.F_Cali.cmdExit.Event(Click,cmdExit_Click)
+Gui.F_Dir..Create
+Gui.F_Dir..Caption("File Directory")
+Gui.F_Dir..Size(5355,1695)
+Gui.F_Dir..MinX(0)
+Gui.F_Dir..MinY(0)
+Gui.F_Dir..Position(0,0)
+Gui.F_Dir..BackColor(-2147483633)
+Gui.F_Dir..MousePointer(0)
+Gui.F_Dir..Event(UnLoad,F_Dir_UnLoad)
+Gui.F_Dir.txtDir.Create(TextBox,"",True,4245,300,0,255,345,True,0,"Arial",8,-2147483643,1)
+Gui.F_Dir.lblFile.Create(Label,"File",True,1935,255,0,195,150,True,0,"Arial",8,-2147483633,0)
+Gui.F_Dir.cmdExport.Create(Button)
+Gui.F_Dir.cmdExport.Size(855,375)
+Gui.F_Dir.cmdExport.Position(210,705)
+Gui.F_Dir.cmdExport.Caption("Export")
+Gui.F_Dir.cmdExport.Event(Click,cmdExport_Click)
+Gui.F_Dir.cmdBrowser.Create(Button)
+Gui.F_Dir.cmdBrowser.Size(375,375)
+Gui.F_Dir.cmdBrowser.Position(4545,300)
+Gui.F_Dir.cmdBrowser.Caption("^")
+Gui.F_Dir.cmdBrowser.Event(Click,cmdBrowser_Click)
+Gui.FormChoice..Create
+Gui.FormChoice..Caption("OT & DT Rules")
+Gui.FormChoice..Size(3810,1410)
+Gui.FormChoice..MinX(0)
+Gui.FormChoice..MinY(0)
+Gui.FormChoice..Position(0,0)
+Gui.FormChoice..BackColor(-2147483633)
+Gui.FormChoice..MousePointer(0)
+Gui.FormChoice..Event(UnLoad,FormChoice_UnLoad)
+Gui.FormChoice.cmdCalifornia.Create(Button)
+Gui.FormChoice.cmdCalifornia.Size(1290,810)
+Gui.FormChoice.cmdCalifornia.Position(465,165)
+Gui.FormChoice.cmdCalifornia.Caption("California Rules")
+Gui.FormChoice.cmdCalifornia.Event(Click,cmdCalifornia_Click)
+Gui.FormChoice.cmdColorado.Create(Button)
+Gui.FormChoice.cmdColorado.Size(1290,810)
+Gui.FormChoice.cmdColorado.Position(1935,165)
+Gui.FormChoice.cmdColorado.Caption("Colorado Rules")
+Gui.FormChoice.cmdColorado.Event(Click,cmdColorado_Click)
+Gui.FormColorado..Create
+Gui.FormColorado..Caption("Colorado OT & DT Rules")
+Gui.FormColorado..Size(6345,9990)
+Gui.FormColorado..MinX(0)
+Gui.FormColorado..MinY(0)
+Gui.FormColorado..Position(0,0)
+Gui.FormColorado..BackColor(-2147483633)
+Gui.FormColorado..MousePointer(0)
+Gui.FormColorado..Event(UnLoad,FormColorado_UnLoad)
+Gui.FormColorado.cmdSave.Create(Button)
+Gui.FormColorado.cmdSave.Size(855,375)
+Gui.FormColorado.cmdSave.Position(180,9240)
+Gui.FormColorado.cmdSave.Caption("Save")
+Gui.FormColorado.cmdSave.Event(Click,cmdSave_Click_Colorado)
+Gui.FormColorado.txtWDReg.Create(TextBox,"0.00",True,900,300,0,1770,1935,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtWDReg.NumericOnly(True)
+Gui.FormColorado.txtWDReg.DefaultValue("")
+Gui.FormColorado.txtWDOver.Create(TextBox,"0.00",True,900,300,0,3060,1935,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtWDOver.NumericOnly(True)
+Gui.FormColorado.txtWDOver.DefaultValue("")
+Gui.FormColorado.lbLBasedOT.Create(Label,"Pay Overtime Based On:",True,2340,255,0,585,180,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.chkDaily.Create(CheckBox)
+Gui.FormColorado.chkDaily.Size(1965,360)
+Gui.FormColorado.chkDaily.Position(495,495)
+Gui.FormColorado.chkDaily.Caption("Daily Hours")
+Gui.FormColorado.chkDaily.Event(Click,chkDaily_Click_Colorado)
+Gui.FormColorado.chkWeekly.Create(CheckBox)
+Gui.FormColorado.chkWeekly.Size(1560,360)
+Gui.FormColorado.chkWeekly.Position(2865,495)
+Gui.FormColorado.chkWeekly.Caption("Weekly Hours")
+Gui.FormColorado.chkWeekly.Event(Click,chkWeekly_Click_Colorado)
+Gui.FormColorado.txtWDDbl.Create(TextBox,"0.00",True,900,300,0,4395,1935,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtWDDbl.NumericOnly(True)
+Gui.FormColorado.txtWDDbl.DefaultValue("")
+Gui.FormColorado.lblWeekday.Create(Label,"Weekday",True,1125,255,0,375,2010,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblWeekly.Create(Label,"Weekly",True,1125,255,0,375,2490,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.txtWLReg.Create(TextBox,"0.00",True,900,300,0,1770,2415,True,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtWLReg.NumericOnly(True)
+Gui.FormColorado.txtWLReg.DefaultValue("")
+Gui.FormColorado.txtWLOver.Create(TextBox,"0.00",True,900,300,0,3060,2415,True,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtWLOver.NumericOnly(True)
+Gui.FormColorado.txtWLOver.DefaultValue("")
+Gui.FormColorado.txtWLDbl.Create(TextBox,"0.00",True,900,300,0,4395,2415,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtWLDbl.NumericOnly(True)
+Gui.FormColorado.txtWLDbl.DefaultValue("")
+Gui.FormColorado.lblSaturday.Create(Label,"Saturday",True,1125,255,0,375,2955,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.txtSatReg.Create(TextBox,"0.00",True,900,300,0,1770,2880,True,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtSatReg.NumericOnly(True)
+Gui.FormColorado.txtSatReg.DefaultValue("")
+Gui.FormColorado.txtSatOver.Create(TextBox,"0.00",True,900,300,0,3060,2880,True,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtSatOver.NumericOnly(True)
+Gui.FormColorado.txtSatOver.DefaultValue("")
+Gui.FormColorado.txtSatDbl.Create(TextBox,"0.00",True,900,300,0,4395,2880,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtSatDbl.NumericOnly(True)
+Gui.FormColorado.txtSatDbl.DefaultValue("")
+Gui.FormColorado.lblSunday.Create(Label,"Sunday",True,1125,255,0,375,3435,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.txtSunReg.Create(TextBox,"0.00",True,900,300,0,1770,3360,True,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtSunReg.NumericOnly(True)
+Gui.FormColorado.txtSunReg.DefaultValue("")
+Gui.FormColorado.txtSunOver.Create(TextBox,"0.00",True,900,300,0,3060,3360,True,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtSunOver.NumericOnly(True)
+Gui.FormColorado.txtSunOver.DefaultValue("")
+Gui.FormColorado.txtSunDbl.Create(TextBox,"0.00",True,900,300,0,4395,3360,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtSunDbl.NumericOnly(True)
+Gui.FormColorado.txtSunDbl.DefaultValue("")
+Gui.FormColorado.lblHoliday.Create(Label,"Holiday",True,1125,255,0,375,3915,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.txtHolReg.Create(TextBox,"0.00",True,900,300,0,1770,3840,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtHolReg.NumericOnly(True)
+Gui.FormColorado.txtHolReg.DefaultValue("")
+Gui.FormColorado.txtHolOver.Create(TextBox,"0.00",True,900,300,0,3060,3840,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtHolOver.NumericOnly(True)
+Gui.FormColorado.txtHolOver.DefaultValue("")
+Gui.FormColorado.txtHolDbl.Create(TextBox,"0.00",True,900,300,0,4395,3840,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtHolDbl.NumericOnly(True)
+Gui.FormColorado.txtHolDbl.DefaultValue("")
+Gui.FormColorado.lblHeader1.Create(Label,"Max Hours For Regular and Overtime Calcluation",True,4545,255,0,465,1275,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblReg.Create(Label,"Regular",True,900,255,0,1785,1620,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblOver.Create(Label,"1 1/2 Time",True,900,255,0,3060,1620,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblDbl.Create(Label,"Double",True,900,255,0,4380,1620,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.chkOverride.Create(CheckBox)
+Gui.FormColorado.chkOverride.Size(4530,360)
+Gui.FormColorado.chkOverride.Position(540,4305)
+Gui.FormColorado.chkOverride.Caption("Override Ot by Shift")
+Gui.FormColorado.chkOverride.Enabled(False)
+Gui.FormColorado.lblNote1.Create(Label,"NOTE: Any hours over the specified amount in each field will roll over into the",True,5835,240,0,225,4785,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNote2.Create(Label,"next field for that category. If no values are entered for Regular, 1 1/2, or",True,5835,240,0,270,4995,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNote3.Create(Label,"Double Time, all hours for that category will be paid as Regular Time.",True,5835,240,0,270,5220,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblHeader2.Create(Label,"Include In Overtime Calculations",True,2835,255,0,600,5820,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.chk1.Create(CheckBox)
+Gui.FormColorado.chk1.Size(1560,360)
+Gui.FormColorado.chk1.Position(1065,6120)
+Gui.FormColorado.chk1.Caption("REGULAR")
+Gui.FormColorado.chk2.Create(CheckBox)
+Gui.FormColorado.chk2.Size(1560,360)
+Gui.FormColorado.chk2.Position(1065,6480)
+Gui.FormColorado.chk2.Caption("SICK")
+Gui.FormColorado.chk3.Create(CheckBox)
+Gui.FormColorado.chk3.Size(1560,360)
+Gui.FormColorado.chk3.Position(1065,6825)
+Gui.FormColorado.chk3.Caption("VACATION")
+Gui.FormColorado.chk4.Create(CheckBox)
+Gui.FormColorado.chk4.Size(1560,360)
+Gui.FormColorado.chk4.Position(1065,7185)
+Gui.FormColorado.chk4.Caption("HOLIDAY")
+Gui.FormColorado.chk5.Create(CheckBox)
+Gui.FormColorado.chk5.Size(1560,360)
+Gui.FormColorado.chk5.Position(1065,7545)
+Gui.FormColorado.chk5.Caption("BONUS")
+Gui.FormColorado.lblNum1.Create(Label,"1",True,255,255,0,735,6210,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNum2.Create(Label,"2",True,255,255,0,735,6555,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNum3.Create(Label,"3",True,255,255,0,735,6915,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNum4.Create(Label,"4",True,255,255,0,735,7275,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lbl5.Create(Label,"5",True,255,255,0,735,7635,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNum6.Create(Label,"6",True,255,255,0,3600,6225,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNum10.Create(Label,"10",True,255,255,0,3540,7650,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNum9.Create(Label,"9",True,255,255,0,3600,7290,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNum8.Create(Label,"8",True,255,255,0,3600,6930,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.lblNum7.Create(Label,"7",True,255,255,0,3600,6570,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.chk10.Create(CheckBox)
+Gui.FormColorado.chk10.Size(1560,360)
+Gui.FormColorado.chk10.Position(3930,7560)
+Gui.FormColorado.chk9.Create(CheckBox)
+Gui.FormColorado.chk9.Size(1560,360)
+Gui.FormColorado.chk9.Position(3930,7200)
+Gui.FormColorado.chk8.Create(CheckBox)
+Gui.FormColorado.chk8.Size(1560,360)
+Gui.FormColorado.chk8.Position(3930,6840)
+Gui.FormColorado.chk7.Create(CheckBox)
+Gui.FormColorado.chk7.Size(1560,360)
+Gui.FormColorado.chk7.Position(3930,6495)
+Gui.FormColorado.chk6.Create(CheckBox)
+Gui.FormColorado.chk6.Size(1560,360)
+Gui.FormColorado.chk6.Position(3930,6135)
+Gui.FormColorado.lblHoliHead.Create(Label,"Holiday Hours",True,1935,255,0,420,8160,True,0,"Arial",8,-2147483633,0)
+Gui.FormColorado.optShift.Create(Option)
+Gui.FormColorado.optShift.Size(1350,255)
+Gui.FormColorado.optShift.Position(600,8445)
+Gui.FormColorado.optShift.Caption("Shift Hours")
+Gui.FormColorado.optShift.ControlGroup(1)
+Gui.FormColorado.optShift.Event(Click,optShift_Click_Colorado)
+Gui.FormColorado.optShift.Enabled(False)
+Gui.FormColorado.optCalendar.Create(Option)
+Gui.FormColorado.optCalendar.Size(1575,255)
+Gui.FormColorado.optCalendar.Position(1980,8445)
+Gui.FormColorado.optCalendar.Caption("Calendar Hours")
+Gui.FormColorado.optCalendar.ControlGroup(1)
+Gui.FormColorado.optCalendar.Event(Click,optShift_Click_Colorado)
+Gui.FormColorado.optCalendar.Enabled(False)
+Gui.FormColorado.optSpecify.Create(Option)
+Gui.FormColorado.optSpecify.Size(1575,255)
+Gui.FormColorado.optSpecify.Position(3660,8445)
+Gui.FormColorado.optSpecify.Caption("Specify Hours")
+Gui.FormColorado.optSpecify.ControlGroup(1)
+Gui.FormColorado.optSpecify.Event(Click,optShift_Click_Colorado)
+Gui.FormColorado.optSpecify.Enabled(False)
+Gui.FormColorado.txtSpecHrs.Create(TextBox,"0",True,675,300,0,5145,8430,False,0,"Arial",8,-2147483643,1)
+Gui.FormColorado.txtSpecHrs.NumericOnly(True)
+Gui.FormColorado.txtSpecHrs.DefaultValue("")
+Gui.FormColorado.chk11.Create(CheckBox)
+Gui.FormColorado.chk11.Size(4035,360)
+Gui.FormColorado.chk11.Position(600,8715)
+Gui.FormColorado.chk11.Caption("Do not pay holiday if shift hours is zero")
+Gui.FormColorado.chk11.Enabled(False)
+Gui.FormColorado.cmdExit.Create(Button)
+Gui.FormColorado.cmdExit.Size(855,375)
+Gui.FormColorado.cmdExit.Position(1095,9240)
+Gui.FormColorado.cmdExit.Caption("Exit")
+Gui.FormColorado.cmdExit.Event(Click,cmdExit_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.fWeek.Declare(Float)
+Variable.Global.fSatu.Declare(Float)
+Variable.Global.fSund.Declare(Float)
+Variable.Global.fCaliWeek.Declare(Float)
+Variable.Global.fCaliSatu.Declare(Float)
+Variable.Global.fCaliSund.Declare(Float)
+Variable.Global.dFirst.Declare(Date,1/1/1901)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'This project will be attached to the Transfer labor to payroll hook and also to a custom menu item.
+'This will create a csv file for payroll export. There will be a maintenance program that will run from a custom menu item.
+'The customer needs to have different Overtime and Holiday rules for employees who live in california. The custom menu item will save the settings for these employees
+'Looking at project
+
+'modified March 19th, 2020
+'Trey S
+'Chaning location to pull from sales order ship to state connected to work order
+'adding logic for colorado overtime
+'Ticket: 007160-82620191622-3
+
+'modified by BixRB
+'added module to use Scrap Code as Location
+
+F.Intrinsic.Control.Try
+
+V.Local.sTime.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.bFlag.Declare(Boolean)
+
+F.Intrinsic.Control.CallSub(SetIcon)
+
+'The customer was having timeout issues, so we added an extended time to the connection
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass, 50000)
+
+F.Intrinsic.Control.SelectCase(V.Caller.Hook)
+'If it runs from the xfer labor to payroll, create the file
+F.Intrinsic.Control.Case("15290")
+	V.Local.sTime.Set(V.Ambient.Time)
+	F.Intrinsic.String.Split(V.Local.sTime, " ", V.Local.sTime)
+	F.Intrinsic.String.StripCharacters(V.Local.sTime(1), V.Local.sTime)
+	F.Intrinsic.String.LPad(V.Local.sTime, "0", 6, V.Local.sTime)
+	F.Intrinsic.String.Format(V.Ambient.Date, "MMDDYYYY", V.Local.sDate)
+	F.Intrinsic.String.Build("{0}\PayrollExport", V.Caller.FilesDir, V.Local.sRet)
+	F.Intrinsic.File.DirExists(V.Local.sRet, V.Local.bFlag)
+	F.Intrinsic.Control.If(V.Local.bFlag, =, False)
+		F.Intrinsic.File.CreateDir(V.Local.sRet)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("{0}\PayrollExport\SPX_US_IN_TIME_{1}{2}_{1}.csv", V.Caller.FilesDir, V.Local.sDate, V.Local.sTime, V.Local.sRet)
+	Gui.F_Dir.txtDir.Text(V.Local.sRet)
+	Gui.F_Dir..Show
+'If it does not run from the labor to payroll hook, then it is running from the custom menu item, therefore execute maintenance program
+F.Intrinsic.Control.CaseElse
+	F.Intrinsic.Control.CallSub(PopulateColoradoOptions)
+	F.Intrinsic.Control.CallSub(PopulateCaliforniaOptions)
+	GUI.FormChoice..Show
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.PopulateCaliforniaOptions.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSql.Declare(String)
+V.Local.sOpt.Declare(String)
+
+'We are checking for data from the custom table. If it exists, populate it on screen. There should only be one row in the table.
+V.Local.sSql.Set("Select Top 1 * from GCG_4356_Cali_OTDT")
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rstRead", V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rstRead.EOF, =, False)
+	Gui.F_Cali.chkDaily.Value(V.ODBC.con!rstRead.FieldVal!PAY_DAILY_OT)
+	Gui.F_Cali.chkWeekly.Value(V.ODBC.con!rstRead.FieldVal!PAY_WEEKLY_OT)	
+	Gui.F_Cali.txtWDReg.Text(V.ODBC.con!rstRead.FieldVal!WEEKDAY_REG_HRS)
+	Gui.F_Cali.txtWDOver.Text(V.ODBC.con!rstRead.FieldVal!WEEKDAY_OT_HRS)
+	Gui.F_Cali.txtWDDbl.Text(V.ODBC.con!rstRead.FieldVal!WEEKDAY_DBL_HRS)
+	Gui.F_Cali.txtWLReg.Text(V.ODBC.con!rstRead.FieldVal!WKLY_REG_HRS)
+	Gui.F_Cali.txtWLOver.Text(V.ODBC.con!rstRead.FieldVal!WKLY_OT_HRS)
+	Gui.F_Cali.txtWLDbl.Text(V.ODBC.con!rstRead.FieldVal!WKLY_DBL_HRS)
+	Gui.F_Cali.txtSatReg.Text(V.ODBC.con!rstRead.FieldVal!SAT_REG_HRS)
+	Gui.F_Cali.txtSatOver.Text(V.ODBC.con!rstRead.FieldVal!SAT_OT_HRS)
+	Gui.F_Cali.txtSatDbl.Text(V.ODBC.con!rstRead.FieldVal!SAT_DBL_HRS)
+	Gui.F_Cali.txtSunReg.Text(V.ODBC.con!rstRead.FieldVal!SUN_REG_HRS)
+	Gui.F_Cali.txtSunOver.Text(V.ODBC.con!rstRead.FieldVal!SUN_OT_HRS)
+	Gui.F_Cali.txtSunDbl.Text(V.ODBC.con!rstRead.FieldVal!SUN_DBL_HRS)
+	Gui.F_Cali.txtHolReg.Text(V.ODBC.con!rstRead.FieldVal!SAT_REG_HRS)
+	Gui.F_Cali.txtHolOver.Text(V.ODBC.con!rstRead.FieldVal!SAT_REG_HRS)
+	Gui.F_Cali.txtHolDbl.Text(V.ODBC.con!rstRead.FieldVal!SAT_REG_HRS)
+	Gui.F_Cali.chk2.Value(V.ODBC.con!rstRead.FieldVal!SICK_CHK)
+	Gui.F_Cali.chk3.Value(V.ODBC.con!rstRead.FieldVal!VACA_CHK)
+	Gui.F_Cali.chk4.Value(V.ODBC.con!rstRead.FieldVal!HOLI_CHK)
+	Gui.F_Cali.chk5.Value(V.ODBC.con!rstRead.FieldVal!BONUS_CHK)
+	Gui.F_Cali.chk1.Value(V.ODBC.con!rstRead.FieldVal!REG_CHK)
+	Gui.F_Cali.chk6.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_1)
+	Gui.F_Cali.chk7.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_2)
+	Gui.F_Cali.chk8.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_3)
+	Gui.F_Cali.chk9.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_4)
+	Gui.F_Cali.chk10.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_5)
+	
+	V.Local.sOpt.Set(V.ODBC.con!rstRead.FieldValTrim!SHIFT_RULES)
+	
+	F.Intrinsic.Control.SelectCase(V.Local.sOpt.Trim)
+	F.Intrinsic.Control.Case("S")
+		Gui.F_Cali.optShift.Value(1)
+		Gui.F_Cali.txtSpecHrs.Enabled(False)
+		Gui.F_Cali.chk11.Value(V.ODBC.con!rstRead.FieldVal!ZEROPAY)
+	F.Intrinsic.Control.Case("C")
+		Gui.F_Cali.optCalendar.Value(1)
+		Gui.F_Cali.txtSpecHrs.Enabled(False)
+		Gui.F_Cali.chk11.Enabled(False)
+	F.Intrinsic.Control.Case("O")
+		Gui.F_Cali.optSpecify.Value(1)
+		Gui.F_Cali.txtSpecHrs.Text(V.ODBC.con!rstRead.FieldValFloat!HOL_HOURS)
+		Gui.F_Cali.chk11.Enabled(False)
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.CallSub(chkdaily_click)
+	F.Intrinsic.Control.CallSub(chkweekly_click)
+	
+F.Intrinsic.Control.Else
+	Gui.F_Cali.optShift.Value(1)
+	Gui.F_Cali.txtSpecHrs.Enabled(False)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstRead.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.PopulateCaliforniaOptions.End
+
+Program.Sub.optShift_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Cali!optShift.Value, =, "1")
+	Gui.F_Cali.txtSpecHrs.Enabled(False)
+	Gui.F_Cali.txtSpecHrs.Text("0")
+	Gui.F_Cali.chk11.Enabled(True)	
+F.Intrinsic.Control.ElseIf(V.Screen.F_Cali!optCalendar.Value, =, "1")
+	Gui.F_Cali.txtSpecHrs.Enabled(False)
+	Gui.F_Cali.txtSpecHrs.Text("0")
+	Gui.F_Cali.chk11.Enabled(False)	
+	Gui.F_Cali.chk11.Value("0")
+F.Intrinsic.Control.Elseif(V.Screen.F_Cali!optSpecify.Value, =, "1")
+	Gui.F_Cali.txtSpecHrs.Enabled(True)
+	Gui.F_Cali.chk11.Enabled(False)	
+	Gui.F_Cali.chk11.Value("0")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.optShift_Click.End
+
+Program.Sub.chkDaily_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sCheck.Declare(String)
+
+'V.Local.sCheck.Set(V.Screen.F_Cali!chkDaily.Value)
+
+'F.Intrinsic.Control.If(V.Local.sCheck, =, 1)
+'	Gui.F_Cali.txtWDDbl.Enabled(True)
+'	Gui.F_Cali.txtWDOver.Enabled(True)
+'	Gui.F_Cali.txtWDReg.Enabled(True)
+'F.Intrinsic.Control.Else
+'	Gui.F_Cali.txtWDDbl.Enabled(False)
+'	Gui.F_Cali.txtWDOver.Enabled(False)
+'	Gui.F_Cali.txtWDReg.Enabled(False)
+'	Gui.F_Cali.txtWDDbl.Text("0.00")
+'	Gui.F_Cali.txtWDOver.Text("0.00")
+'	Gui.F_Cali.txtWDReg.Text("0.00")
+'F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.chkDaily_Click.End
+
+Program.Sub.chkWeekly_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sCheck.Declare(String)
+
+V.Local.sCheck.Set(V.Screen.F_Cali!chkWeekly.Value)
+
+F.Intrinsic.Control.If(V.Local.sCheck, =, 1)
+	Gui.F_Cali.txtWLDbl.Enabled(True)
+	Gui.F_Cali.txtWLOver.Enabled(True)
+	Gui.F_Cali.txtWLReg.Enabled(True)
+F.Intrinsic.Control.Else
+	Gui.F_Cali.txtWLDbl.Enabled(False)
+	Gui.F_Cali.txtWLOver.Enabled(False)
+	Gui.F_Cali.txtWLReg.Enabled(False)
+	Gui.F_Cali.txtWLDbl.Text("0.00")
+	Gui.F_Cali.txtWLOver.Text("0.00")
+	Gui.F_Cali.txtWLReg.Text("0.00")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.chkWeekly_Click.End
+
+Program.Sub.cmdSave_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSql.Declare(String)
+V.Local.sOpt.Declare(String)
+
+V.Local.sSql.Set("Select Top 1 * from GCG_4356_Cali_OTDT")
+F.ODBC.Connection!con.OpenLocalRecordsetRW("rstWrite", V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rstWrite.EOF, =, True)
+	F.ODBC.con!rstWrite.AddNew
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstWrite.Set!PAY_DAILY_OT(V.Screen.F_Cali!chkDaily.Value)
+F.ODBC.con!rstWrite.Set!PAY_WEEKLY_OT(V.Screen.F_Cali!chkWeekly.Value)
+F.ODBC.con!rstWrite.Set!WEEKDAY_REG_HRS(V.Screen.F_Cali!txtWDReg.Text)
+F.ODBC.con!rstWrite.Set!WEEKDAY_OT_HRS(V.Screen.F_Cali!txtWDOver.Text)
+F.ODBC.con!rstWrite.Set!WEEKDAY_DBL_HRS(V.Screen.F_Cali!txtWDDbl.Text)
+F.ODBC.con!rstWrite.Set!SAT_REG_HRS(V.Screen.F_Cali!txtSatReg.Text)
+F.ODBC.con!rstWrite.Set!SAT_OT_HRS(V.Screen.F_Cali!txtSatOver.Text)
+F.ODBC.con!rstWrite.Set!SAT_DBL_HRS(V.Screen.F_Cali!txtSatDbl.Text)
+F.ODBC.con!rstWrite.Set!SUN_REG_HRS(V.Screen.F_Cali!txtSunReg.Text)
+F.ODBC.con!rstWrite.Set!SUN_OT_HRS(V.Screen.F_Cali!txtSunOver.Text)
+F.ODBC.con!rstWrite.Set!SUN_DBL_HRS(V.Screen.F_Cali!txtSunDbl.Text)
+F.ODBC.con!rstWrite.Set!HOL_REG_HRS(V.Screen.F_Cali!txtHolReg.Text)
+F.ODBC.con!rstWrite.Set!HOL_OT_HRS(V.Screen.F_Cali!txtHolOver.Text)
+F.ODBC.con!rstWrite.Set!HOL_DBL_HRS(V.Screen.F_Cali!txtHolDbl.Text)
+F.ODBC.con!rstWrite.Set!WKLY_REG_HRS(V.Screen.F_Cali!txtWLReg.Text)
+F.ODBC.con!rstWrite.Set!WKLY_OT_HRS(V.Screen.F_Cali!txtWLOver.Text)
+F.ODBC.con!rstWrite.Set!WKLY_DBL_HRS(V.Screen.F_Cali!txtWLDbl.Text)
+F.ODBC.con!rstWrite.Set!REG_CHK(V.Screen.F_Cali!chk1.Value)
+F.ODBC.con!rstWrite.Set!SICK_CHK(V.Screen.F_Cali!chk2.Value)
+F.ODBC.con!rstWrite.Set!VACA_CHK(V.Screen.F_Cali!chk3.Value)
+F.ODBC.con!rstWrite.Set!HOLI_CHK(V.Screen.F_Cali!chk4.Value)
+F.ODBC.con!rstWrite.Set!BONUS_CHK(V.Screen.F_Cali!chk5.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_1(V.Screen.F_Cali!chk6.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_2(V.Screen.F_Cali!chk7.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_3(V.Screen.F_Cali!chk8.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_4(V.Screen.F_Cali!chk9.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_5(V.Screen.F_Cali!chk10.Value)
+F.ODBC.con!rstWrite.Set!HOL_HOURS(V.Screen.F_Cali!txtSpecHrs.Text)
+
+F.Intrinsic.Control.If(V.Screen.F_Cali!optShift.Value, =, "1")
+	V.Local.sOpt.Set("S")
+F.Intrinsic.Control.ElseIf(V.Screen.F_Cali!optCalendar.Value, =, "1")
+	V.Local.sOpt.Set("C")
+F.Intrinsic.Control.ElseIf(V.Screen.F_Cali!optSpecify.Value, =, "1")
+	V.Local.sOpt.Set("O")
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstWrite.Set!SHIFT_RULES(V.Local.sOpt)
+
+F.ODBC.con!rstWrite.Set!OVERRIDEOT(V.Screen.F_Cali!chkOverride.Value)
+F.ODBC.con!rstWrite.Set!ZEROPAY(V.Screen.F_Cali!chk11.Value)
+F.ODBC.con!rstWrite.Update
+
+F.ODBC.con!rstWrite.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.cmdExit_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(FormChoice_Unload)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExit_Click.End
+
+Program.Sub.F_Cali_UnLoad.Start
+F.Intrinsic.Control.Try
+
+GUI.F_Cali..Visible(False)
+GUI.FormChoice..Show
+GUI.FormChoice..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Cali_UnLoad.End
+
+Program.Sub.GatherData.Start
+F.Intrinsic.Control.Try
+
+V.Local..BulkDeclareString(sSql, sDate, sTime, sRet, sWeekDay, sFlag, sEmp, sType, sEC01, sEC02, sEC03, sEC04, sEC05, sEC06, sEC07, sEC08, sEC09, sEC10, sWageType, sEC, sWorkAbs, sFilter, sFirst, sLast, sDay)
+V.Local..BulkDeclareDate(dFirst, dLast, dDay, dCounter, dCheck)
+V.Local..BulkDeclareFloat(fWkReg, fWkOt, fWkDb, fSatReg, fSatOt, fSatDb, fSunReg, fSunOt, fSunDb, fLeft, fTotal, fPrevious, fRate, fHours, fActual, fHolReg, fHolOt, fHolDb)
+V.Local.iCount.Declare(Long)
+V.Local.iIndex.Declare(Long)
+V.Local.iLimit.Declare(Long)
+V.Local.iDay.Declare(Long)
+V.Local.bNonCaliFlag.Declare(Boolean)
+V.Local.bBreakFlag.Declare(Boolean)
+V.Local.dStart.Declare(Date)
+V.Local.dEnd.Declare(Date)
+
+'Date and time passed are used to pull information from pyrl_labor_xfer table
+Function.Intrinsic.String.Left(Variable.Passed.888888,8,Variable.Local.sDate)
+Function.Intrinsic.String.Mid(Variable.Passed.888888,9,6,Variable.Local.sTime)
+
+V.Local.sSql.Set("SELECT EC, EMPLOYEE, EMPLOYEE as EMP, BEG_CYMD, TYPE, HOURS from PYRL_LABOR_XFER ")
+F.Intrinsic.String.Build("{0} Where RUN_CYMD = '{1}' and RUN_TIME = '{2}' ", V.Local.sSql, V.Local.sDate, V.Local.sTime, V.Local.sSql)
+
+F.Data.DataTable.CreateFromSQL("Main0", "con", V.Local.sSql, TRUE)
+F.Data.DataTable.AddColumn("Main0", "TimeUnit", "String", "Hours")
+
+'The customer stores the employee IDs used for payroll in the COMMENTS_1 on customer master
+F.Data.DataTable.CreateFromSQL("Filler", "con", "Select COMMENTS_1, STATE_CODE, EMPLOYEE from V_EMPLOYEE_MSTR", True)
+
+F.Data.Dictionary.CreatefromDataTable("EEID", "Filler", "EMPLOYEE", "COMMENTS_1")
+F.Data.Dictionary.SetDefaultReturn("EEID", "")
+
+F.Data.DataTable.AddColumn("Main0", "EEID", "String")
+F.Data.DataTable.FillFromDictionary("Main0", "EEID", "Employee", "EEID")
+
+F.Data.Dictionary.Close("EEID")
+
+F.Data.Dictionary.CreateFromDataTable("State", "Filler", "EMPLOYEE", "STATE_CODE")
+F.Data.Dictionary.SetDefaultReturn("State", "")
+
+F.Data.DataTable.AddColumn("Main0", "State", "String")
+F.Data.DataTable.FillFromDictionary("Main0", "State", "Employee", "State")
+
+F.Data.Dictionary.Close("State")
+F.Data.DataTable.Close("Filler")
+
+F.Intrinsic.String.Right(V.Passed.BEGDATE, 6, V.Local.sFirst)
+F.Intrinsic.Date.ConvertDString(V.Local.sFirst, "YYMMDD", V.Local.dStart)
+
+F.Intrinsic.String.Right(V.Passed.ENDDATE, 6, V.Local.sLast)
+F.Intrinsic.Date.ConvertDString(V.Local.sLast, "YYMMDD", V.Local.dEnd)
+
+'grab the state from the sales order ship to date connected to the work orders
+'Modification by BixRB - use the SCRAP_REASON to pull in the state abbreviation
+F.Intrinsic.String.Build("select distinct A.JOB, A.SUFFIX, RTRIM(A.EMPL) EMPL, B.ORDER_NO, if(A.SCRAP_REASON <> 'CA' and A.SCRAP_REASON <> 'CO', C.STATE_SHIP, rtrim(A.SCRAP_REASON)) as STATE_SHIP from V_JOB_DETAIL A left join V_ORDER_TO_WO B on A.JOB = B.JOB and A.SUFFIX = B.SUFFIX left join V_ORDER_SHIP_TO C on B.ORDER_NO = C.ORDER_NO where A.DATE_SEQUENCE between '{0}' and '{1}'", V.Local.dStart.PervasiveDate, V.Local.dEnd.PervasiveDate, V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtShipStates", "Con", V.Local.sSQL)
+
+F.Data.Dictionary.CreateFromDataTable("dictShipState", "dtShipStates", "EMPL", "STATE_SHIP")
+F.Data.Dictionary.SetDefaultReturn("dictShipState", "")
+F.Data.DataTable.AddColumn("Main0", "SHIP_STATE", "String", "")
+F.Data.DataTable.FillFromDictionary("Main0", "dictShipState", "EMPLOYEE", "SHIP_STATE")
+F.Data.Dictionary.Close("dictShipState")
+F.Data.DataTable.Close("dtShipStates")
+
+F.Data.DataView.Create("Main0", "Main0", 22, "EMPLOYEE <> ''", "EMPLOYEE ASC")
+F.Data.DataView.ToDataTable("Main0", "Main0", "Main", TRUE)
+F.Data.DataTable.Close("Main0")
+
+'This is for the absentee time for employees
+F.Data.Dictionary.Create("ECAbsentCodes")
+F.Data.Dictionary.AddItem("ECAbsentCodes", "03", "5210")
+F.Data.Dictionary.AddItem("ECAbsentCodes", "04", "5201")
+F.Data.Dictionary.AddItem("ECAbsentCodes", "05", "5205")
+F.Data.Dictionary.AddItem("ECAbsentCodes", "06", "5202")
+F.Data.Dictionary.AddItem("ECAbsentCodes", "07", "5203")
+F.Data.Dictionary.AddItem("ECAbsentCodes", "09", "")
+F.Data.Dictionary.AddItem("ECAbsentCodes", "10", "5208")
+F.Data.Dictionary.SetDefaultReturn("ECAbsentCodes", "")
+F.Data.DataTable.AddColumn("Main", "WAGETYPE", "String")
+F.Data.DataTable.FillFromDictionary("Main", "ECAbsentCodes", "EC", "WAGETYPE") 
+F.Data.Dictionary.Close("ECAbsentCodes")
+
+'get california records
+F.Data.DataView.Create("Main", "Calis", 22, "SHIP_STATE = 'CA'", "EMPLOYEE ASC")
+F.Data.DataView.ToDataTable("Main", "Calis", "Cali", TRUE)
+F.Data.DataView.Close("Main", "Calis")
+
+'get colorado records
+F.Data.DataView.Create("Main", "dvColorado", 22, "Ship_State = 'CO'", "EMPLOYEE ASC")
+F.Data.DataView.ToDataTable("Main", "dvColorado", "dtColoradoMain", TRUE)
+F.Data.DataView.Close("Main", "dvColorado")
+
+'grab holiday records
+F.Data.DataView.Create("Main", "dvHoliday", 22, "EC = '07' and (SHIP_STATE = 'CA' or SHIP_STATE = 'CO')", "EMPLOYEE ASC")
+F.Data.DataView.ToDataTable("Main", "dvHoliday", "dtHoliday")
+
+F.Data.DataTable.Close("Main")
+
+F.Data.DataTable.RemoveColumn("dtHoliday", "EC")
+F.Data.DataTable.RemoveColumn("dtHoliday", "EMPLOYEE")
+F.Data.DataTable.RemoveColumn("dtHoliday", "BEG_CYMD")
+F.Data.DataTable.RemoveColumn("dtHoliday", "TYPE")
+F.Data.DataTable.AddColumn("dtHoliday", "WA", "String", "A")
+F.Data.DataTable.AddColumn("dtHoliday", "Rate", "String")
+F.Data.DataTable.AddColumn("dtHoliday", "Actual", "String")
+
+'create california employee dictionary
+F.Data.Dictionary.CreateFromDataTable("CaliEmps", "Cali", "EMPLOYEE", "EMPLOYEE")
+F.Data.Dictionary.SetDefaultReturn("CaliEmps", " ")
+F.Data.DataTable.Close("Cali")
+
+'create colorado employee dictionary
+F.Data.Dictionary.CreateFromDataTable("dictColoradoEmployees", "dtColoradoMain", "EMPLOYEE", "EMPLOYEE")
+F.Data.Dictionary.SetDefaultReturn("dictColoradoEmployees", " ")
+F.Data.DataTable.Close("dtColoradoMain")
+
+F.Intrinsic.String.Right(V.Passed.BEGDATE, 6, V.Local.sFirst)
+F.Intrinsic.Date.ConvertDString(V.Local.sFirst, "YYMMDD", V.Global.dFirst)
+
+F.Intrinsic.String.Right(V.Passed.ENDDATE, 6, V.Local.sLast)
+F.Intrinsic.Date.ConvertDString(V.Local.sLast, "YYMMDD", V.Local.dLast)
+
+V.Local.sSql.Set("Select EMPL, RATE_EMPLOYEE, DATE_SEQUENCE, SUM(HOURS_WORKED) as SUM_HOURS from JOB_DETAIL")
+F.Intrinsic.String.Build("{0} where DATE_SEQUENCE between '{1}' and '{2}'", V.Local.sSql, V.Local.sFirst, V.Local.sLast, V.Local.sSql)
+F.Intrinsic.String.Build("{0}  GROUP BY EMPL, RATE_EMPLOYEE, DATE_SEQUENCE", V.Local.sSql, V.Local.sSql)
+F.Data.DataTable.CreateFromSQL("JOB", "con", V.Local.sSql, True)
+
+F.Data.DataTable.AddColumn("JOB", "CALI", "String")
+F.Data.DataTable.FillFromDictionary("JOB", "CaliEmps", "EMPL", "CALI")
+
+F.Data.DataTable.AddColumn("JOB", "Colorado_Employee", "String")
+F.Data.DataTable.FillFromDictionary("JOB", "dictColoradoEmployees", "EMPL", "Colorado_Employee")
+
+F.Data.DataView.Create("JOB", "CaliJobs", 22, "CALI <> ''", "EMPL ASC")
+F.Data.DataView.ToDataTable("JOB", "CaliJobs", "CalculationsAlpha", True)
+F.Data.DataView.Close("JOB", "CaliJobs")
+
+F.Data.DataView.Create("JOB", "dvColoradoJobs", 22, "Colorado_Employee <> ''", "EMPL ASC")
+F.Data.DataView.ToDataTable("JOB", "dvColoradoJobs", "dtColoradoCalculationsAlpha", True)
+F.Data.DataView.Close("JOB", "dvColoradoJobs")
+
+F.Data.DataTable.Close("JOB")
+
+F.Data.DataTable.AddColumn("CalculationsAlpha", "DAY", "String")
+F.Data.DataTable.AddColumn("CalculationsAlpha", "Flag", "String")
+F.Data.DataTable.AddColumn("CalculationsAlpha", "EARNINGS_CODE", "String")
+F.Data.DataTable.AddColumn("dtColoradoCalculationsAlpha", "DAY", "String")
+F.Data.DataTable.AddColumn("dtColoradoCalculationsAlpha", "Flag", "String")
+F.Data.DataTable.AddColumn("dtColoradoCalculationsAlpha", "EARNINGS_CODE", "String")
+
+F.Data.DataTable.SetValue("CalculationsAlpha", -1, "EARNINGS_CODE", "W")
+F.Data.DataTable.SetValue("dtColoradoCalculationsAlpha", -1, "EARNINGS_CODE", "W")
+
+'Now get holiday hours/time attendance stuff
+V.Local.sSql.Set("select EMPLOYEE as EMPL, EARNINGS_CODE, CAST(REPLACE(CAST(Charge_Date As CHAR(10)), '-', '') AS CHAR(10)) AS CHARGE_DATE, SUM(HOURS_HH) as HRS, SUM(HOURS_MM) as MN from V_TIME_ATTENDANCE")
+F.Intrinsic.String.Build("{0} where CHARGE_DATE between '{1}' and '{2}' ", V.Local.sSql, V.Global.dFirst.PervasiveDate, V.Local.dLast.PervasiveDate, V.Local.sSql)
+F.Intrinsic.String.Build("{0} GROUP BY EMPLOYEE, EARNINGS_CODE, CHARGE_DATE", V.Local.sSql, V.Local.sSql)
+F.Data.DataTable.CreateFromSQL("TIME", "con", V.Local.sSql, True)
+F.Data.DataTable.AddExpressionColumn("TIME", "SUMMATION", "Float", "(MN / 60) + HRS")
+F.Data.DataTable.AddExpressionColumn("TIME", "DATE_SEQUENCE", "String", "SUBSTRING(CHARGE_DATE, 3, 6)")
+
+F.Data.DataTable.AddColumn("TIME", "SUM_HOURS", "Float")
+F.Data.DataTable.SetValueFormat("TIME", -1, "SUMMATION", "SUM_HOURS", "##.0000")
+F.Data.DataTable.AddColumn("TIME", "CALI", "String")
+F.Data.DataTable.FillFromDictionary("TIME", "CaliEmps", "EMPL", "CALI")
+F.Data.DataTable.AddColumn("TIME", "Colorado_Employee", "String")
+F.Data.DataTable.FillFromDictionary("TIME", "dictColoradoEmployees", "EMPL", "Colorado_Employee")
+F.Data.Dictionary.Close("dictColoradoEmployees")
+
+'grab california records
+F.Data.DataView.Create("TIME", "CaliTIME", 22, "CALI <> ''", "EMPL ASC")
+F.Data.DataView.ToDataTable("TIME", "CaliTIME", "TIMETable", True)
+F.Data.DataView.Close("TIME", "CaliTime")
+
+'grab colorado records
+F.Data.DataView.Create("TIME", "dvColoradoTime", 22, "Colorado_Employee <> ''", "EMPL ASC")
+F.Data.DataView.ToDataTable("TIME", "dvColoradoTime", "dtColoradoTimeTable", True)
+F.Data.DataView.Close("TIME", "dvColoradoTime")
+
+F.Data.DataTable.Close("TIME")
+
+F.Data.DataTable.CreateFromSQL("EmpRate", "Con", "Select EMPLOYEE, RATE, COMMENTS_1 from V_EMPLOYEE_MSTR")
+
+F.Data.Dictionary.CreateFromDataTable("EmpRate", "EmpRate", "EMPLOYEE", "RATE")
+F.Data.Dictionary.SetDefaultReturn("EmpRate", "0")
+
+F.Data.DataTable.FillFromDictionary("dtHoliday", "EmpRate", "EMP", "RATE")
+F.Data.DataTable.FillFromDictionary("dtHoliday", "EmpRate", "EMP", "ACTUAL")
+
+F.Data.DataTable.AddColumn("TIMETable", "RATE_EMPLOYEE", "Float")
+F.Data.DataTable.FillFromDictionary("TIMETable", "EmpRate", "EMPL", "RATE_EMPLOYEE")
+F.Data.DataTable.AddColumn("dtColoradoTimeTable", "RATE_EMPLOYEE", "Float")
+F.Data.DataTable.FillFromDictionary("dtColoradoTimeTable", "EmpRate", "EMPL", "RATE_EMPLOYEE")
+F.Data.Dictionary.Close("EmpRate")
+
+F.Data.DataTable.RemoveColumn("TIMETable", "HRS")
+F.Data.DataTable.RemoveColumn("TIMETable", "MN")
+F.Data.DataTable.RemoveColumn("TIMETable", "CHARGE_DATE")
+F.Data.DataTable.RemoveColumn("TIMETable", "SUMMATION")
+
+F.Data.DataTable.RemoveColumn("dtColoradoTimeTable", "HRS")
+F.Data.DataTable.RemoveColumn("dtColoradoTimeTable", "MN")
+F.Data.DataTable.RemoveColumn("dtColoradoTimeTable", "CHARGE_DATE")
+F.Data.DataTable.RemoveColumn("dtColoradoTimeTable", "SUMMATION")
+
+F.Data.DataTable.Merge("TIMETABLE", "CalculationsAlpha", True, 2)
+F.Data.DataTable.Close("TIMETABLE")
+
+F.Data.DataTable.Merge("dtColoradoTimeTable", "dtColoradoCalculationsAlpha", True, 2)
+F.Data.DataTable.Close("dtColoradoTimeTable")
+
+F.Data.DataView.Create("CalculationsAlpha", "TIMETABLEVIEW", 22, "SUM_HOURS > 0", "EMPL ASC, DATE_SEQUENCE ASC")
+F.Data.DataView.ToDataTable("CalculationsAlpha", "TIMETABLEVIEW", "Calculations")
+F.Data.DataView.Close("CalculationsAlpha", "TIMETABLEVIEW")
+
+F.Data.DataTable.Close("CalculationsAlpha")
+
+F.Data.DataView.Create("dtColoradoCalculationsAlpha", "dvColoradoTimeTableView", 22, "SUM_HOURS > 0", "EMPL ASC, DATE_SEQUENCE ASC")
+F.Data.DataView.ToDataTable("dtColoradoCalculationsAlpha", "dvColoradoTimeTableView", "dtColoradoCalculations", True)
+F.Data.DataView.Close("dtColoradoCalculationsAlpha", "dvColoradoTimeTableView")
+
+F.Data.DataTable.Close("dtColoradoCalculationsAlpha")
+
+F.Intrinsic.String.Build("select RTRIM(EMPL) + RTRIM(DATE_SEQUENCE_UF), SUM(HOURS_WORKED) INDIRECT from V_JOB_DETAIL where DATE_SEQUENCE between '{0}' and '{1}' and FLAG_INDIRECT = 'I' group by EMPL, DATE_SEQUENCE_UF", V.Global.dFirst.PervasiveDate, V.Local.dLast.PervasiveDate, V.Local.sSQL)
+F.Data.Dictionary.CreateFromSQL("dictIndirect", "Con", V.Local.sSQL)
+F.Data.Dictionary.SetDefaultReturn("dictIndirect", 0)
+F.Data.DataTable.AddColumn("dtColoradoCalculations", "Indirect", "Float", 0)
+F.Data.DataTable.AddExpressionColumn("dtColoradoCalculations", "INDIRECT_KEY", "String", "Trim(EMPL) + TRIM(DATE_SEQUENCE)")
+F.Data.DataTable.FillFromDictionary("dtColoradoCalculations", "dictIndirect", "INDIRECT_KEY", "Indirect")
+F.Data.Dictionary.Close("dictIndirect")
+
+F.Data.DataTable.AddExpressionColumn("dtColoradoCalculations", "DIRECT", Float, "SUM_HOURS - INDIRECT")
+
+F.Data.DataTable.Create("Breakdown", True)
+F.Data.DataTable.AddColumn("Breakdown", "EMP", "String")
+F.Data.DataTable.AddColumn("Breakdown", "RATE", "Float")
+F.Data.DataTable.AddColumn("Breakdown", "DATE", "Date")
+F.Data.DataTable.AddColumn("Breakdown", "TYPE", "String")
+F.Data.DataTable.AddColumn("Breakdown", "HOURS", "Float")
+F.Data.DataTable.AddColumn("Breakdown", "ACTUAL", "Float")
+F.Data.DataTable.AddColumn("Breakdown", "WAGETYPE", "String")
+F.Data.DataTable.AddColumn("Breakdown", "WA", "String")
+
+'--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+'pulling OT options from custom table
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rstRules", "SELECT TOP 1 * from GCG_4356_CALI_OTDT")
+F.Intrinsic.Control.If(V.ODBC.con!rstRules.EOF, <>, True)
+	F.Intrinsic.Control.If(V.ODBC.con!rstRules.FieldValTrim!PAY_DAILY_OT, =, 1)
+		V.Local.fWkReg.Set(V.ODBC.con!rstRules.FieldValFloat!WEEKDAY_REG_HRS)
+		V.Local.fWkOt.Set(V.ODBC.con!rstRules.FieldValFloat!WEEKDAY_OT_HRS)
+		V.Local.fWkDb.Set(V.ODBC.con!rstRules.FieldValFloat!WEEKDAY_DBL_HRS)
+		F.Intrinsic.String.Build("{0}-{1}-{2}", V.Local.fWkReg, V.Local.fWkOt, V.Local.fWkDb, V.Local.sSql)
+		F.Intrinsic.String.Split(V.Local.sSql, "-", V.Global.fCaliWeek)
+		V.Local.fSatReg.Set(V.ODBC.con!rstRules.FieldValFloat!SAT_REG_HRS)
+		V.Local.fSatOt.Set(V.ODBC.con!rstRules.FieldValFloat!SAT_OT_HRS)
+		V.Local.fSatDb.Set(V.ODBC.con!rstRules.FieldValFloat!SAT_DBL_HRS)
+		F.Intrinsic.String.Build("{0}-{1}-{2}", V.Local.fSatReg, V.Local.fSatOt, V.Local.fSatDb, V.Local.sSql)
+		F.Intrinsic.String.Split(V.Local.sSql, "-", V.Global.fCaliSatu)
+		V.Local.fSunReg.Set(V.ODBC.con!rstRules.FieldValFloat!SUN_REG_HRS)
+		V.Local.fSunOt.Set(V.ODBC.con!rstRules.FieldValFloat!SUN_OT_HRS)
+		V.Local.fSunDb.Set(V.ODBC.con!rstRules.FieldValFloat!SUN_DBL_HRS)
+		F.Intrinsic.String.Build("{0}-{1}-{2}", V.Local.fSunReg, V.Local.fSunOt, V.Local.fSunDb, V.Local.sSql)
+		F.Intrinsic.String.Split(V.Local.sSql, "-", V.Global.fCaliSund)
+		V.Local.sEC01.Set(V.ODBC.con!rstRules.FieldValTrim!REG_CHK)
+		V.Local.sEC02.Set(V.ODBC.con!rstRules.FieldValTrim!SICK_CHK)
+		V.Local.sEC03.Set(V.ODBC.con!rstRules.FieldValTrim!VACA_CHK)
+		V.Local.sEC04.Set(V.ODBC.con!rstRules.FieldValTrim!HOLI_CHK)
+		V.Local.sEC05.Set(V.ODBC.con!rstRules.FieldValTrim!BONUS_CHK)
+		V.Local.sEC06.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_1)
+		V.Local.sEC07.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_2)
+		V.Local.sEC08.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_3)
+		V.Local.sEC09.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_4)
+		V.Local.sEC10.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_5)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'The customer decided we wanted to stick to making calculations for California employees only
+'We will be getting the number of days the employee has been working up to the first day of the payroll calculation for overtime calculations purposes
+F.Intrinsic.Control.CallSub(workingdayscount)
+F.Data.Dictionary.Close("CaliEmps")
+'iLimit counter will keep track of how many consecutive days the employee has worked
+V.Local.iLimit.Set(0)
+
+'bBreakFlag will be set to True if there has been a break in the week, in which case we do not keep track of consecutive work days until we hit a monday again
+V.Local.bBreakFlag.Set(False)
+
+'For their overtime rules, we do not charge overtime on the seventh consecutive day, it goes straight to double time. We may need to have an additional check to see how many days the employee has been working before the pay period
+F.Intrinsic.Control.For(V.Local.iCount, 0, V.DataTable.Calculations.RowCount--, 1)
+	'check to see if it is the same as the previous day
+	F.Intrinsic.Date.ConvertDString(V.DataTable.Calculations(V.Local.iCount).DATE_SEQUENCE!FieldValTrim, "YYMMDD", V.Local.dCheck)
+				
+	'First check if same employee as the previous sequence. If so reset everything.
+	F.Intrinsic.Control.If(V.Local.sEmp, <>, V.DataTable.Calculations(V.Local.iCount).EMPL!FieldValTrim)
+		V.Local.sEmp.Set(V.DataTable.Calculations(V.Local.iCount).EMPL!FieldValTrim)
+		V.Local.fPrevious.Set(0)
+		V.Local.fTotal.Set(0)
+		V.Local.sFlag.Set("REG")
+		V.Local.dDay.Set(V.Local.dCheck)		
+		F.Intrinsic.Date.DateAdd("D", 1, V.Local.dDay, V.Local.dCounter)		
+		V.Local.iLimit.Set(V.Dictionary.Days![V.Local.sEmp])
+		F.Intrinsic.Control.CallSub(OTRulesCalifornia, "iLim", V.Local.iLimit)
+	F.Intrinsic.Control.ElseIf(V.Local.dDay, <>, V.Local.dCheck)
+		'This part of the code calculates what overtime rulse we should use
+		'Big note: According to customer, an employee that works in california gets paid no overtime on Sunday IF AND ONLY IF they worked Monday through Sunday. In that instance, everything after 8 hours gets paid double time.
+		V.Local.fPrevious.Set(0)
+		V.Local.fTotal.Set(0)
+		V.Local.sFlag.Set("REG")
+		V.Local.dDay.Set(V.Local.dCheck)
+		'Make sure this gets reset every Monday
+		F.Intrinsic.Date.Weekday(V.Local.dDay, V.Local.iDay)
+		F.Intrinsic.Control.If(V.Local.iDay, =, 2)
+			V.Local.iLimit.Set(0)
+			V.Local.bBreakFlag.Set(False)
+		F.Intrinsic.Control.ElseIf(V.Local.dDay, =, V.Local.dCounter)
+			F.Intrinsic.Math.Add(V.Local.iLimit, 1, V.Local.iLimit)
+		F.Intrinsic.Control.Else
+			V.Local.iLimit.Set(0)
+			V.Local.bBreakFlag.Set(True)
+		F.Intrinsic.Control.EndIf
+		'Before we send the consecutive days worked, make sure there hasnt been a break in the week
+		F.Intrinsic.Control.If(V.Local.bBreakFlag, =, True)
+			V.Local.iLimit.Set(0)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.CallSub(OTRulesCalifornia, "iLim", V.Local.iLimit)
+		F.Intrinsic.Date.DateAdd("D", 1, V.Local.dDay, V.Local.dCounter)		
+	F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.SelectCase(V.DataTable.Calculations(V.Local.iCount).Earnings_Code!FieldValTrim)
+	F.Intrinsic.Control.Case("W")
+		V.Local.sWorkAbs.Set("W")
+		V.Local.fRate.Set(V.DataTable.Calculations(V.Local.iCount).RATE_EMPLOYEE!FieldValFloat)
+		V.Local.fLeft.Set(V.DataTable.Calculations(V.Local.iCount).SUM_HOURS!FieldValFloat)
+		F.Intrinsic.Control.If(V.Local.fLeft, >, 0)
+			F.Intrinsic.Math.Add(V.Local.fPrevious, v.Local.fLeft, V.Local.fTotal)
+			'The flag we set will keep track of where we left off for the previous work entry for the same emp and date
+			F.Intrinsic.Control.SelectCase(V.Local.sFlag)
+			F.Intrinsic.Control.Case("REG")
+				F.Intrinsic.Control.If(V.Local.fTotal, <, V.Args.fReg)
+					'make new entry with fLeft as the time
+					F.Intrinsic.Math.Round(V.Local.fLeft, 2, V.Local.fHours)
+					F.Intrinsic.Math.Mult(V.Local.fRate, 1, V.Local.fActual)
+					F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5000", "WA", V.Local.sWorkAbs)
+					
+				F.Intrinsic.Control.ElseIf(V.Local.fTotal, <, V.Args.fOt)
+				
+					'make two new entries, one with fTotal - fReg for OT, and one of fReg - fPrevious							
+					F.Intrinsic.Math.Sub(V.Args.fReg, V.Local.fPrevious, V.Local.fHours)
+					F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+					F.Intrinsic.Math.Mult(V.Local.fRate, 1, V.Local.fActual)
+					F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5000", "WA", V.Local.sWorkAbs)
+		
+					F.Intrinsic.Math.Sub(V.Local.fTotal, V.Args.fReg, V.Local.fHours)
+					F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+					F.Intrinsic.Math.Mult(V.Local.fRate, 1.5, V.Local.fActual)
+					F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)
+					F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "OT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5103", "WA", V.Local.sWorkAbs)
+					V.Local.sFlag.Set("OT")
+				F.Intrinsic.Control.Else
+				
+					'make three new entries, one with fTotal - fOT for DBL, fOT - fReg for OT, and one of fReg - fPrevious for reg
+					F.Intrinsic.Math.Sub(V.Args.fReg, V.Local.fPrevious, V.Local.fHours)
+					F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+					F.Intrinsic.Math.Mult(V.Local.fRate, 1, V.Local.fActual)
+					F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5000", "WA", V.Local.sWorkAbs)
+								
+					F.Intrinsic.Math.Sub(V.Args.fOt, V.Args.fReg, V.Local.fHours)
+					F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+					F.Intrinsic.Math.Mult(V.Local.fRate, 1.5, V.Local.fActual)
+					F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)
+					F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "OT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5103", "WA", V.Local.sWorkAbs)
+					
+					F.Intrinsic.Math.Sub(V.Local.fTotal, V.Args.fOt, V.Local.fHours)
+					F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+					F.Intrinsic.Math.Mult(V.Local.fRate, 2, V.Local.fActual)
+					F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)
+					F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "DT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5101", "WA", V.Local.sWorkAbs)
+					V.Local.sFlag.Set("DBL")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Case("OT")
+				F.Intrinsic.Control.If(V.Local.fTotal, <, V.Args.fOt)
+	
+					'Make one new entry, fLeft as the time
+					F.Intrinsic.Math.Round(V.Local.fLeft, 2, V.Local.fHours)
+					F.Intrinsic.Math.Mult(V.Local.fRate, 1.5, V.Local.fActual)
+					F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)
+					F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "OT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5103", "WA", V.Local.sWorkAbs)
+				F.Intrinsic.Control.Else
+				
+					'Make two new entries, one of fTotal - fOT for DBL, and another one of fOT - fPrevious for OT
+					F.Intrinsic.Math.Sub(V.Args.fOt, V.Local.fPrevious, V.Local.fHours)
+					F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+					F.Intrinsic.Math.Mult(V.Local.fRate, 1.5, V.Local.fActual)
+					F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)
+					F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "OT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5103", "WA", V.Local.sWorkAbs)
+					
+					F.Intrinsic.Math.Sub(V.Local.fTotal, V.Args.fOt, V.Local.fHours)
+					F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+					F.Intrinsic.Math.Mult(V.Local.fRate, 2, V.Local.fActual)
+					F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)
+					F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "DT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5101", "WA", V.Local.sWorkAbs)
+					
+					V.Local.sFlag.Set("DBL")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Case("DBL")
+			
+				'Make an entry of fLeft for Double
+				F.Intrinsic.Math.Round(V.Local.fLeft, 2, V.Local.fHours)
+				F.Intrinsic.Math.Mult(V.Local.fRate, 2, V.Local.fActual)
+				F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)				
+				F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "DT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5101", "WA", V.Local.sWorkAbs)
+			F.Intrinsic.Control.EndSelect
+			V.Local.fPrevious.Set(V.Local.fTotal)
+		F.Intrinsic.Control.EndIf	
+	
+	F.Intrinsic.Control.CaseElse
+		F.Intrinsic.Control.If(V.DataTable.Calculations(V.Local.iCount).EARNINGS_CODE!FieldValTrim, <>, "")	
+			V.Local.sEC.Set(V.DataTable.Calculations(V.Local.iCount).EARNINGS_CODE!FieldValTrim)
+		F.Intrinsic.Control.Else
+			V.Local.sEC.Set("01")
+		F.Intrinsic.Control.EndIf
+			
+		V.Local.fRate.Set(V.DataTable.Calculations(V.Local.iCount).RATE_EMPLOYEE!FieldValFloat)
+		V.Local.fLeft.Set(V.DataTable.Calculations(V.Local.iCount).SUM_HOURS!FieldValFloat)
+		F.Intrinsic.Control.SelectCase(V.Local.sEC)
+		F.Intrinsic.Control.Case("01")
+'				V.Local.sWageType.Set("5000")
+			V.Local.sWorkAbs.Set("W")
+		F.Intrinsic.Control.Case("03")
+			V.Local.sWageType.Set("5210")
+			V.Local.sWorkAbs.Set("A")
+		F.Intrinsic.Control.Case("04")
+			V.Local.sWageType.Set("5201")
+			V.Local.sWorkAbs.Set("A")
+		F.Intrinsic.Control.Case("05")
+			V.Local.sWageType.Set("5205")
+			V.Local.sWorkAbs.Set("A")
+		F.Intrinsic.Control.Case("06")
+			V.Local.sWageType.Set("5202")
+			V.Local.sWorkAbs.Set("A")
+		F.Intrinsic.Control.Case("07")
+			V.Local.sWageType.Set("5203")
+			V.Local.sWorkAbs.Set("A")
+		F.Intrinsic.Control.CaseElse
+			V.Local.sWageType.Set("")
+'				V.Local.sWorkAbs.Set("")
+			V.Local.sWorkAbs.Set("A")
+		F.Intrinsic.Control.EndSelect
+		
+		F.Intrinsic.Control.If(V.Local.sEC[V.DataTable.Calculations(V.Local.iCount).EARNINGS_CODE!FieldValTrim], =, 0, "OR", V.Local.sWorkAbs, =, "A")
+			'No Overtime Calculation, so single entry in main table
+			F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.Local.fLeft, "ACTUAL", V.Local.fRate, "WAGETYPE", V.Local.sWageType, "WA", V.Local.sWorkAbs)
+			
+			V.Local.iLimit.Set(0)
+			
+		F.Intrinsic.Control.Else
+			'Figure out how much time is OT and DT This needs to be modified to comply with the new rules
+			F.Intrinsic.Control.If(V.Local.fLeft, <, V.Args.fReg)
+				'make new entry with fLeft as the time
+				F.Intrinsic.Math.Round(V.Local.fLeft, 2, V.Local.fHours)
+				F.Intrinsic.Math.Mult(V.Local.fRate, 1, V.Local.fActual)
+				F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5000", "WA", V.Local.sWorkAbs)
+				
+			F.Intrinsic.Control.ElseIf(V.Local.fLeft, <, V.Args.fOt)
+				'make two new entries, one with fTotal - fReg for OT, and one of fReg - fPrevious	
+				
+				V.Local.fHours.Set(V.Args.fReg)		
+				F.Intrinsic.Math.Mult(V.Local.fRate, 1, V.Local.fActual)
+				F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5000", "WA", V.Local.sWorkAbs)
+	
+				F.Intrinsic.Math.Sub(V.Local.fLeft, V.Args.fReg, V.Local.fHours)
+				F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+				F.Intrinsic.Math.Mult(V.Local.fRate, 1.5, V.Local.fActual)
+				F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)
+				F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "OT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5103", "WA", V.Local.sWorkAbs)
+
+			F.Intrinsic.Control.Else
+				'make three new entries, one with fTotal - fOT for DBL, fOT - fReg for OT, and one of fReg - fPrevious for reg
+				V.Local.fHours.Set(V.Args.fReg)
+				F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+				F.Intrinsic.Math.Mult(V.Local.fRate, 1, V.Local.fActual)
+				F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5000", "WA", V.Local.sWorkAbs)
+							
+				F.Intrinsic.Math.Sub(V.Args.fOt, V.Args.fReg, V.Local.fHours)
+				F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+				F.Intrinsic.Math.Mult(V.Local.fRate, 1.5, V.Local.fActual)
+				F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)
+				F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "OT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5103", "WA", V.Local.sWorkAbs)
+				
+				F.Intrinsic.Math.Sub(V.Local.fLeft, V.Args.fOt, V.Local.fHours)
+				F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+				F.Intrinsic.Math.Mult(V.Local.fRate, 2, V.Local.fActual)
+				F.Intrinsic.Math.Round(V.Local.fActual, 2, V.Local.fActual)
+				F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "DT", "HOURS", V.Local.fHours, "ACTUAL", V.Local.fActual, "WAGETYPE", "5101", "WA", V.Local.sWorkAbs)
+				V.Local.sFlag.Set("DBL")
+			F.Intrinsic.Control.EndIf			
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndSelect
+		
+F.Intrinsic.Control.Next(V.Local.iCount)
+F.Data.Dictionary.Close("Days")
+
+F.Intrinsic.Control.CallSub(ColoradoCalculations)
+
+F.Data.DataTable.AddColumn("dtHoliday", "DATE", "Date", V.Local.dDay)
+F.Data.DataTable.Merge("dtHoliday", "Breakdown", True, 2)
+F.Data.DataTable.Close("dtHoliday")
+
+F.Data.Dictionary.CreateFromDataTable("EmpEEID", "EmpRate", "EMPLOYEE", "COMMENTS_1")
+F.Data.Dictionary.SetDefaultReturn("EmpEEID", "0")
+
+F.Data.DataTable.AddExpressionColumn("Breakdown", "Wage", "Float", "ACTUAL*HOURS")
+F.Data.DataTable.AddColumn("Breakdown", "EEID", "String")
+F.Data.DataTable.FillFromDictionary("Breakdown", "EmpEEID", "EMP", "EEID")
+F.Data.Dictionary.Close("EmpEEID")
+F.Data.DataTable.Close("EmpRate")
+
+F.Data.Dictionary.CreateFromDataTable("EMPLOYEES", "Breakdown", "EMP", "EEID")
+
+F.Intrinsic.String.Build("SELECT TOP 1 BEG_CYMD from PYRL_LABOR_XFER where RUN_CYMD = '{0}' and RUN_TIME = '{1}' and BEG_CYMD <> '' ", V.Local.sDate, V.Local.sTime, V.Local.sSql)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sDate)
+F.Intrinsic.Control.CallSub(buildfile, "sCYMD", V.Local.sDate)
+
+F.Intrinsic.String.Build("Labor to payrol export file has been created:{0}{0}{1}", V.Ambient.NewLine, V.Screen.F_Dir!txtDir.Text, V.Local.sSql)
+F.Intrinsic.UI.Msgbox(V.Local.sSql, "Labor to Payroll export .csv file has been created")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.GatherData.End
+
+Program.Sub.ColoradoCalculations.Start
+F.Intrinsic.Control.Try
+
+V.Local.iCount.Declare(Long)
+V.Local.fThisIndirect.Declare(Float)
+V.Local.fThisDirect.Declare(Float)
+V.Local.fThisDayOT.Declare(Float)
+V.Local.fThisWeekTotal.Declare(Float)
+V.Local.fOTRate.Declare(Float)
+V.Local.fThisDayRT.Declare(Float)
+V.Local.fThisDayWeeklyOT.Declare(Float)
+V.Local.sEC.Declare(String)
+V.Local.fRate.Declare(Float)
+V.Local.sEmp.Declare(String)
+V.Local.sWorkAbs.Declare("String")
+V.Local.dDay.Declare(Date)
+V.Local.sWageType.Declare(String)
+V.Local.sEC01.Declare(String)
+V.Local.sEC02.Declare(String)
+V.Local.sEC03.Declare(String)
+V.Local.sEC04.Declare(String)
+V.Local.sEC05.Declare(String)
+V.Local.sEC06.Declare(String)
+V.Local.sEC07.Declare(String)
+V.Local.sEC08.Declare(String)
+V.Local.sEC09.Declare(String)
+V.Local.sEC10.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.fWkReg.Declare(Float)
+V.Local.fWkOt.Declare(Float)
+V.Local.fWkDb.Declare(Float)
+V.Local.fSatReg.Declare(Float)
+V.Local.fSatOt.Declare(Float)
+V.Local.fSatDb.Declare(Float)
+V.Local.fSunReg.Declare(Float)
+V.Local.fSunOt.Declare(Float)
+V.Local.fSunDb.Declare(Float)
+V.Local.fWeeklyOT.Declare(Float)
+V.Local.fWeeklyRT.Declare(Float)
+
+'pulling OT options from custom table
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rstRules", "SELECT TOP 1 * from GCG_4356_COLO_OTDT")
+F.Intrinsic.Control.If(V.ODBC.con!rstRules.EOF, <>, True)
+	F.Intrinsic.Control.If(V.ODBC.con!rstRules.FieldValTrim!PAY_DAILY_OT, =, 1)
+		V.Local.fWkReg.Set(V.ODBC.con!rstRules.FieldValFloat!WEEKDAY_REG_HRS)
+		V.Local.fWkOt.Set(V.ODBC.con!rstRules.FieldValFloat!WEEKDAY_OT_HRS)
+		V.Local.fWkDb.Set(V.ODBC.con!rstRules.FieldValFloat!WEEKDAY_DBL_HRS)
+		F.Intrinsic.String.Build("{0}-{1}-{2}", V.Local.fWkReg, V.Local.fWkOt, V.Local.fWkDb, V.Local.sSql)
+		F.Intrinsic.String.Split(V.Local.sSql, "-", V.Global.fWeek)
+		V.Local.fSatReg.Set(V.ODBC.con!rstRules.FieldValFloat!SAT_REG_HRS)
+		V.Local.fSatOt.Set(V.ODBC.con!rstRules.FieldValFloat!SAT_OT_HRS)
+		V.Local.fSatDb.Set(V.ODBC.con!rstRules.FieldValFloat!SAT_DBL_HRS)
+		F.Intrinsic.String.Build("{0}-{1}-{2}", V.Local.fSatReg, V.Local.fSatOt, V.Local.fSatDb, V.Local.sSql)
+		F.Intrinsic.String.Split(V.Local.sSql, "-", V.Global.fSatu)
+		V.Local.fSunReg.Set(V.ODBC.con!rstRules.FieldValFloat!SUN_REG_HRS)
+		V.Local.fSunOt.Set(V.ODBC.con!rstRules.FieldValFloat!SUN_OT_HRS)
+		V.Local.fSunDb.Set(V.ODBC.con!rstRules.FieldValFloat!SUN_DBL_HRS)
+		F.Intrinsic.String.Build("{0}-{1}-{2}", V.Local.fSunReg, V.Local.fSunOt, V.Local.fSunDb, V.Local.sSql)
+		F.Intrinsic.String.Split(V.Local.sSql, "-", V.Global.fSund)
+		V.Local.sEC01.Set(V.ODBC.con!rstRules.FieldValTrim!REG_CHK)
+		V.Local.sEC02.Set(V.ODBC.con!rstRules.FieldValTrim!SICK_CHK)
+		V.Local.sEC03.Set(V.ODBC.con!rstRules.FieldValTrim!VACA_CHK)
+		V.Local.sEC04.Set(V.ODBC.con!rstRules.FieldValTrim!HOLI_CHK)
+		V.Local.sEC05.Set(V.ODBC.con!rstRules.FieldValTrim!BONUS_CHK)
+		V.Local.sEC06.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_1)
+		V.Local.sEC07.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_2)
+		V.Local.sEC08.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_3)
+		V.Local.sEC09.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_4)
+		V.Local.sEC10.Set(V.ODBC.con!rstRules.FieldValTrim!EXTRA_CHK_5)
+		V.Local.fWeeklyRT.Set(V.ODBC.con!rstRules.FieldValFloat!WKLY_REG_HRS)
+		V.Local.fWeeklyOT.Set(V.ODBC.con!rstRules.FieldValFloat!WKLY_OT_HRS)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'loop through each day and calculate pay types
+F.Intrinsic.Control.For(V.Local.iCount, 0, V.DataTable.dtColoradoCalculations.RowCount--, 1)
+	F.Intrinsic.Date.ConvertDString(V.DataTable.dtColoradoCalculations(V.Local.iCount).DATE_SEQUENCE!FieldValTrim, "YYMMDD", V.Local.dDay)
+	
+	'First check if same employee as the previous sequence. If so reset everything.
+	F.Intrinsic.Control.If(V.Local.sEmp, <>, V.DataTable.dtColoradoCalculations(V.Local.iCount).EMPL!FieldValTrim)
+		V.Local.sEmp.Set(V.DataTable.dtColoradoCalculations(V.Local.iCount).EMPL!FieldValTrim)
+		F.Intrinsic.Control.CallSub(OTRules, "dDay", V.Local.dDay)
+		V.Local.fThisWeekTotal.Set(0)
+		V.Local.fRate.Set(V.DataTable.dtColoradoCalculations(V.Local.iCount).RATE_EMPLOYEE!FieldValFloat)
+		F.Intrinsic.Math.Mult(V.Local.fRate, 1.5, V.Local.fOTRate)
+	F.Intrinsic.Control.EndIf
+	
+	'get the earnings code
+	F.Intrinsic.Control.If(V.DataTable.dtColoradoCalculations(V.Local.iCount).EARNINGS_CODE!FieldValTrim, <>, "")	
+		V.Local.sEC.Set(V.DataTable.dtColoradoCalculations(V.Local.iCount).EARNINGS_CODE!FieldValTrim)
+	F.Intrinsic.Control.Else
+		V.Local.sEC.Set("01")
+	F.Intrinsic.Control.EndIf
+	
+	'use the UC to get the work abs and wage type
+	F.Intrinsic.Control.SelectCase(V.Local.sEC)
+	F.Intrinsic.Control.Case("01")
+		V.Local.sWageType.Set("5000")
+		V.Local.sWorkAbs.Set("W")
+	F.Intrinsic.Control.Case("03")
+		V.Local.sWageType.Set("5210")
+		V.Local.sWorkAbs.Set("A")
+	F.Intrinsic.Control.Case("04")
+		V.Local.sWageType.Set("5201")
+		V.Local.sWorkAbs.Set("A")
+	F.Intrinsic.Control.Case("05")
+		V.Local.sWageType.Set("5205")
+		V.Local.sWorkAbs.Set("A")
+	F.Intrinsic.Control.Case("06")
+		V.Local.sWageType.Set("5202")
+		V.Local.sWorkAbs.Set("A")
+	F.Intrinsic.Control.Case("07")
+		V.Local.sWageType.Set("5203")
+		V.Local.sWorkAbs.Set("A")
+	F.Intrinsic.Control.CaseElse
+		V.Local.sWageType.Set("")
+		V.Local.sWorkAbs.Set("A")
+	F.Intrinsic.Control.EndSelect
+		
+	F.Intrinsic.Control.If(V.Local.sEC, =, "W", OR, V.Local.sEC, =, "01")
+		F.Intrinsic.Control.If(V.Local.sEC, =, "01", AND, V.Local.sEC01, =, 0)
+			'No Overtime Calculation, so single entry in main table
+			F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.DataTable.dtColoradoCalculations(V.Local.iCount).SUM_HOURS!FieldValFloat, "ACTUAL", V.Local.fRate, "WAGETYPE", V.Local.sWageType, "WA", V.Local.sWorkAbs)
+		F.Intrinsic.Control.Else
+			V.Local.sWorkAbs.Set("W")
+		
+			V.Local.fThisDirect.Set(V.DataTable.dtColoradoCalculations(V.Local.iCount).DIRECT!FieldValFloat)
+			V.Local.fThisIndirect.Set(V.DataTable.dtColoradoCalculations(V.Local.iCount).INDIRECT!FieldValFloat)
+			
+			'OT for daily hours over 12
+			F.Intrinsic.Control.If(V.Local.fThisDirect, >, V.Args.fReg)
+				F.Intrinsic.Math.Sub(V.Local.fThisDirect, V.Args.fReg, V.Local.fThisDayOT)
+				V.Local.fThisDirect.Set(V.Args.fReg)
+				F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "OT", "HOURS", V.Local.fThisDayOT, "ACTUAL", V.Local.fOTRate, "WAGETYPE", "5103", "WA", V.Local.sWorkAbs)
+			F.Intrinsic.Control.EndIf
+			
+			'weekly OT for hours over 40
+			F.Intrinsic.Math.Add(V.Local.fThisWeekTotal, V.Local.fThisDirect, V.Local.fThisWeekTotal)
+			F.Intrinsic.Control.If(V.Local.fThisWeekTotal, >, V.Local.fWeeklyRT)
+				F.Intrinsic.Math.Sub(V.Local.fThisWeekTotal, V.Local.fWeeklyRT, V.Local.fThisDayWeeklyOT)
+				V.Local.fThisWeekTotal.Set(V.Local.fWeeklyRT)
+				
+				F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "OT", "HOURS", V.Local.fThisDayWeeklyOT, "ACTUAL", V.Local.fOTRate, "WAGETYPE", "5103", "WA", V.Local.sWorkAbs)
+				
+				F.Intrinsic.Math.Sub(V.Local.fThisDirect, V.Local.fThisDayWeeklyOT, V.Local.fThisDirect)
+			F.Intrinsic.Control.EndIf
+			
+			'daily regular time
+			F.Intrinsic.Math.Add(V.Local.fThisDirect, V.Local.fThisIndirect, V.Local.fThisDayRT)
+			F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.Local.fThisDayRT, "ACTUAL", V.Local.fRate, "WAGETYPE", "5000", "WA", V.Local.sWorkAbs)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		'No Overtime Calculation, so single entry in main table
+		F.Data.DataTable.AddRow("Breakdown", "EMP", V.Local.sEmp, "RATE", V.Local.fRate, "DATE", V.Local.dDay, "TYPE", "RT", "HOURS", V.DataTable.dtColoradoCalculations(V.Local.iCount).SUM_HOURS!FieldValFloat, "ACTUAL", V.Local.fRate, "WAGETYPE", V.Local.sWageType, "WA", V.Local.sWorkAbs)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.ColoradoCalculations.End
+
+Program.Sub.OTRules.Start
+F.Intrinsic.Control.Try
+
+V.Local..BulkDeclareFloat(fReg, fOt, fDb)
+V.Local.sWeekday.Declare(String)
+
+F.Intrinsic.Date.Weekday(V.Args.dDay, V.Local.sWeekDay)
+'sWeekday is day of the week. 7 for Saturday, 1 for Sunday, all others are weekdays
+F.Intrinsic.Control.SelectCase(V.Local.sWeekDay.Trim)
+F.Intrinsic.Control.Case("7")
+	V.Local.fReg.Set(V.Global.fSatu(0))
+	V.Local.fOt.Set(V.Global.fSatu(1))
+	V.Local.fDb.Set(V.Global.fSatu(2))
+F.Intrinsic.Control.Case("1")
+	V.Local.fReg.Set(V.Global.fSund(0))
+	V.Local.fOt.Set(V.Global.fSund(1))
+	V.Local.fDb.Set(V.Global.fSund(2))		
+F.Intrinsic.Control.CaseElse
+	V.Local.fReg.Set(V.Global.fWeek(0))
+	V.Local.fOt.Set(V.Global.fWeek(1))
+	V.Local.fDb.Set(V.Global.fWeek(2))
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Variable.AddRV("fReg", V.Local.fReg, "fOt", V.Local.fOt, "fDb", V.Local.fDb)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.OTRules.End
+
+Program.Sub.F_Dir_UnLoad.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Dir_UnLoad.End
+
+Program.Sub.cmdBrowser_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sFileID.Declare(String)
+V.Local.sRet.Declare(String)
+
+V.Local.sFileID.Set(V.Screen.F_Dir!txtDir.Text)
+Function.Intrinsic.UI.ShowSaveFileDialog(V.Local.sFileID,"Comma Separated File|.csv",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	Gui.F_Dir.txtDir.Text(V.Local.sRet)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowser_Click.End
+
+Program.Sub.cmdExport_Click.Start
+F.Intrinsic.Control.Try
+
+Gui.F_Dir..Visible(False)
+
+F.Intrinsic.Control.CallSub(gatherdata)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.BuildFile.Start
+F.Intrinsic.Control.Try
+
+V.Local..BulkDeclareString(sWageType, sRet, sEmp, sType, sWorkAbs, sFilter, sDate, sFile, sLine)
+V.Local..BulkDeclareLong(iCount, iIndex, iHandle)
+V.Local.fHours.Declare(Float)
+
+F.Intrinsic.String.Left(V.Args.sCYMD, 4, V.Local.sDate)
+F.Intrinsic.String.Mid(V.Args.sCYMD, 5, 4, V.Local.sLine)
+F.Intrinsic.String.Build("{0}{1}", v.Local.sLine.Trim, V.Local.sDate.Trim, V.Local.sDate)
+
+V.Local.sFile.Set(V.Screen.F_Dir!txtDir.Text)
+
+'These are the columns of the csv file. In the code that I am mimicking, most of these fields are printed empty in the data. I presume this changes on a customer basis
+V.Local.sLine.Set("EEID,StartDate,T&APaycode,SFPayCode,WageType,HrsForRemInfo,Number,TimeUnit,WageTypeAmt,CurrKey,ExtraPayInd,ValBasisDiffPay,PSGrp,PSLvl,Position,OTCompType,PremiumNum,PremiumInd,WorkTaxArea,ExtDocNum,CompCode,CostCenter,WRK/ABS")
+
+F.Data.DataTable.Create("Export", True)
+F.Data.DataTable.AddColumn("Export", "Emp", "String")
+F.Data.DataTable.AddColumn("Export", "EEID", "String")
+F.Data.DataTable.AddColumn("Export", "StartDate", "String")
+F.Data.DataTable.AddColumn("Export", "WageType", "String")
+F.Data.DataTable.AddColumn("Export", "Number", "Float")
+F.Data.DataTable.AddColumn("Export", "TimeUnits", "String")
+F.Data.DataTable.AddColumn("Export", "WrkAbs", "String")
+F.Data.DataTable.AddColumn("Export", "Beg_CYMD", "String")
+
+'These are the list of wage types according to the report I was following. The "A" or "W" at the end stand for Absent or Working
+F.Intrinsic.String.Split("5000W-5101W-5103W-5210A-5201A-5205A-5202A-5203A", "-", V.Local.sWageType)
+
+'We do our innitial loop through data by Employee, where the key value in the dictionary is the EEID
+F.Data.Dictionary.ReturnAllPairs("EMPLOYEES", V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet, "!*!", V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet(0), "*!*", V.Local.sEmp)
+F.Intrinsic.String.Split(V.Local.sRet(1), "*!*", V.Local.sRet)
+
+'Loop through the raw calculations and sum all quantities grouped by employee and wage type. 
+F.Intrinsic.Control.For(V.Local.iCount, 0, V.Local.sEmp.UBound, 1)
+	F.Intrinsic.Control.For(V.Local.iIndex, 0, 7, 1)
+		F.Intrinsic.String.Left(V.Local.sWageType(V.Local.iIndex), 4, V.Local.sType)
+		F.Intrinsic.String.Right(V.Local.sWageType(V.Local.iIndex), 1, V.Local.sWorkAbs)
+		F.Intrinsic.String.Build("EMP = '{0}' and WAGETYPE = '{1}'", V.Local.sEmp(V.Local.iCount), V.Local.sType, V.Local.sFilter)
+		F.Data.DataTable.Compute("Breakdown", "Sum(HOURS)", V.Local.sFilter, V.Local.fHours)
+		F.Intrinsic.Control.If(V.Local.fHours, >, 0)
+			'First storing data in datatable
+			F.Data.DataTable.AddRow("Export", "Emp", V.Local.sEmp(V.Local.iCount), "EEID", V.Local.sRet(V.Local.iCount).Trim, "WageType", V.Local.sType, "Number", V.Local.fHours, "WrkAbs", V.Local.sWorkAbs, "Beg_CYMD", V.Local.sDate)
+			'Now writing line to csv file
+			F.Intrinsic.String.Build("{0}{1}{2},{3},,,{4},,{5},Hours,,,,,,,,,,,,,,,{6}", V.Local.sLine, V.Ambient.NewLine, V.Local.sRet(V.Local.iCount).Trim, V.Local.sDate, V.Local.sType, V.Local.fHours, V.Local.sWorkAbs, V.Local.sLine)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iIndex)
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.File.String2File(V.Local.sFile, V.Local.sLine)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.BuildFile.End
+
+Program.Sub.OTRulesCalifornia.Start
+F.Intrinsic.Control.Try
+
+V.Local..BulkDeclareFloat(fReg, fOt, fDb)
+V.Local.sWeekday.Declare(String)
+V.Local.iLim.Declare(Long)
+
+V.Local.iLim.Set(V.Args.iLim)
+
+'this subroutine works on the assumptiont that we always have regular pay, but on the seventh consecutive day and above, we do not have overtime, instead we go into overtime
+'so we are passing the consecutive day
+'sWeekday is day of the week. 7 for Saturday, 1 for Sunday, all others are weekdays
+F.Intrinsic.Control.If(V.Local.iLim, <>, 6)
+	'Use "Sunday" rules
+	V.Local.fReg.Set(V.Global.fCaliSatu(0))
+	V.Local.fOt.Set(V.Global.fCaliSatu(1))
+	V.Local.fDb.Set(V.Global.fCaliSatu(2))	
+F.Intrinsic.Control.Else
+	'Use Regular rules
+	V.Local.fReg.Set(V.Global.fCaliSund(0))
+	V.Local.fOt.Set(V.Global.fCaliSund(1))
+	V.Local.fDb.Set(V.Global.fCaliSund(2))	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.AddRV("fReg", V.Local.fReg, "fOt", V.Local.fOt, "fDb", V.Local.fDb)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.OTRulesCalifornia.End
+
+Program.Sub.WorkingDaysCount.Start
+F.Intrinsic.Control.Try
+
+V.Local.iIndex.Declare(Long)
+V.Local.sEmp.Declare(String)
+V.Local.sCalis.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.dCounter.Declare(Date)
+V.Local.iCount.Declare(Long)
+V.Local.iDays.Declare(Long)
+
+'The purpose of this subroutine is to count how many consecutive days California employees have worked up until the beginning of the pay period
+'We will create a dictionary for it
+F.Data.Dictionary.Create("Days")
+F.Data.Dictionary.SetDefaultReturn("Days", "0")
+
+F.Data.Dictionary.ReturnAllPairs("CaliEmps", V.Local.sCalis)
+F.Intrinsic.String.Split(V.Local.sCalis, "!*!", V.Local.sCalis)
+F.Intrinsic.String.Split(V.Local.sCalis(0), "*!*", V.Local.sCalis)
+
+F.Intrinsic.Control.If(V.Local.sCalis(0), =, "***NORETURN***")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.For(V.Local.iIndex, 0, V.Local.sCalis.UBound, 1)
+	V.Local.sEmp.Set(V.Local.sCalis(V.Local.iIndex))
+	V.Local.dCounter.Set(V.Global.dFirst)
+	V.Local.iDays.Set(0)
+	F.Intrinsic.Control.For(V.Local.iCount, 1, 7, 1)
+		F.Intrinsic.Date.DateAdd("D", -1, V.Local.dCounter, V.Local.dCounter)
+		F.Intrinsic.String.Build("Select * from V_TIME_ATTENDANCE where CHARGE_DATE = '{0}' and EMPLOYEE = '{1}'", V.Local.dCounter.PervasiveDate, V.Local.sEmp, V.Local.sSql)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+		F.Intrinsic.Control.If(v.Local.sRet.Trim, <>, "")
+			F.Intrinsic.Math.Add(V.Local.iDays, 1, V.Local.iDays)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.ExitFor(V.Local.iCount)
+		F.Intrinsic.Control.EndIf	
+	F.Intrinsic.Control.Next(V.Local.iCount)
+	F.Data.Dictionary.AddItem("Days", V.Local.sEmp, V.Local.iDays)
+F.Intrinsic.Control.Next(V.Local.iIndex)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.WorkingDaysCount.End
+
+Program.Sub.SetIcon.Start
+F.Intrinsic.Control.Try
+
+V.Local.sForm.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sIcon.Declare(String)
+V.Local.iCounter.Declare(Long)
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+	F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+	F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists.Not)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.GetFormList(V.Local.sForm)
+F.Intrinsic.String.Split(V.Local.sForm, "*!*", V.Local.sForm)
+
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sForm.UBound, 1)
+	Gui.[V.Local.sForm(V.Local.iCounter)]..Icon(V.Local.sIcon)
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.SetIcon.End
+
+Program.Sub.ErrorMessage.Start
+'basic error message for replacing catch block
+'this is really just for when printing the message and ending program
+'pass error number, error description, current subroutine
+'optional callback sub, this will be called before ending
+
+F.Intrinsic.Control.Try
+
+V.Local.iError.Declare(Long)
+V.Local.sErrorDescription.Declare(String)
+V.Local.sSubroutine.Declare(String)
+V.Local.sError.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCallback.Declare(String)
+V.Static.bError.Declare(Boolean, False)
+
+V.Local.iError.Set(V.Args.ErrorNumber)
+V.Local.sErrorDescription.Set(V.Args.ErrorDescription)
+V.Local.sSubroutine.Set(V.Args.Subroutine)
+
+'make sure we aren't in an error loop
+F.Intrinsic.Control.If(V.Static.bError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+V.Static.bError.Set(True)
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Local.sSubroutine, V.Local.iError, V.Local.sErrorDescription, V.Ambient.GABVersion, V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+
+F.Intrinsic.Variable.ArgExists("Callback", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	V.Local.sCallback.Set(V.Args.Callback.Trim)
+	F.Intrinsic.Control.CallSub(V.Local.sCallback)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.ErrorMessage.End
+
+Program.Sub.cmdCalifornia_Click.Start
+F.Intrinsic.Control.Try
+
+GUI.FormChoice..Visible(False)
+GUI.F_Cali..Show
+GUI.F_Cali..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCalifornia_Click.End
+
+Program.Sub.FormChoice_UnLoad.Start
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.FormChoice_UnLoad.End
+
+Program.Sub.cmdColorado_Click.Start
+F.Intrinsic.Control.Try
+
+GUI.FormChoice..Visible(False)
+GUI.FormColorado..Show
+GUI.FormColorado..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdColorado_Click.End
+
+Program.Sub.optShift_Click_Colorado.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.FormColorado!optShift.Value, =, "1")
+	Gui.FormColorado.txtSpecHrs.Enabled(False)
+	Gui.FormColorado.txtSpecHrs.Text("0")
+	Gui.FormColorado.chk11.Enabled(True)	
+F.Intrinsic.Control.ElseIf(V.Screen.FormColorado!optCalendar.Value, =, "1")
+	Gui.FormColorado.txtSpecHrs.Enabled(False)
+	Gui.FormColorado.txtSpecHrs.Text("0")
+	Gui.FormColorado.chk11.Enabled(False)	
+	Gui.FormColorado.chk11.Value("0")
+F.Intrinsic.Control.Elseif(V.Screen.FormColorado!optSpecify.Value, =, "1")
+	Gui.FormColorado.txtSpecHrs.Enabled(True)
+	Gui.FormColorado.chk11.Enabled(False)	
+	Gui.FormColorado.chk11.Value("0")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.optShift_Click_Colorado.End
+
+Program.Sub.chkDaily_Click_Colorado.Start
+F.Intrinsic.Control.Try
+
+V.Local.sCheck.Declare(String)
+
+V.Local.sCheck.Set(V.Screen.FormColorado!chkDaily.Value)
+
+F.Intrinsic.Control.If(V.Local.sCheck, =, 1)
+	'Gui.FormColorado.txtWDDbl.Enabled(True)
+	Gui.FormColorado.txtWDOver.Enabled(True)
+	Gui.FormColorado.txtWDReg.Enabled(True)
+F.Intrinsic.Control.Else
+	'Gui.FormColorado.txtWDDbl.Enabled(False)
+	Gui.FormColorado.txtWDOver.Enabled(False)
+	Gui.FormColorado.txtWDReg.Enabled(False)
+	Gui.FormColorado.txtWDDbl.Text("0.00")
+	Gui.FormColorado.txtWDOver.Text("0.00")
+	Gui.FormColorado.txtWDReg.Text("0.00")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.chkDaily_Click_Colorado.End
+
+Program.Sub.chkWeekly_Click_Colorado.Start
+F.Intrinsic.Control.Try
+
+V.Local.sCheck.Declare(String)
+
+V.Local.sCheck.Set(V.Screen.FormColorado!chkWeekly.Value)
+
+F.Intrinsic.Control.If(V.Local.sCheck, =, 1)
+	'Gui.FormColorado.txtWLDbl.Enabled(True)
+	Gui.FormColorado.txtWLOver.Enabled(True)
+	Gui.FormColorado.txtWLReg.Enabled(True)
+F.Intrinsic.Control.Else
+	'Gui.FormColorado.txtWLDbl.Enabled(False)
+	Gui.FormColorado.txtWLOver.Enabled(False)
+	Gui.FormColorado.txtWLReg.Enabled(False)
+	Gui.FormColorado.txtWLDbl.Text("0.00")
+	Gui.FormColorado.txtWLOver.Text("0.00")
+	Gui.FormColorado.txtWLReg.Text("0.00")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.chkWeekly_Click_Colorado.End
+
+Program.Sub.cmdSave_Click_Colorado.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSql.Declare(String)
+V.Local.sOpt.Declare(String)
+
+V.Local.sSql.Set("Select Top 1 * from GCG_4356_COLO_OTDT")
+F.ODBC.Connection!con.OpenLocalRecordsetRW("rstWrite", V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rstWrite.EOF, =, True)
+	F.ODBC.con!rstWrite.AddNew
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstWrite.Set!PAY_DAILY_OT(V.Screen.FormColorado!chkDaily.Value)
+F.ODBC.con!rstWrite.Set!PAY_WEEKLY_OT(V.Screen.FormColorado!chkWeekly.Value)
+F.ODBC.con!rstWrite.Set!WEEKDAY_REG_HRS(V.Screen.FormColorado!txtWDReg.Text)
+F.ODBC.con!rstWrite.Set!WEEKDAY_OT_HRS(V.Screen.FormColorado!txtWDOver.Text)
+F.ODBC.con!rstWrite.Set!WEEKDAY_DBL_HRS(V.Screen.FormColorado!txtWDDbl.Text)
+F.ODBC.con!rstWrite.Set!SAT_REG_HRS(V.Screen.FormColorado!txtSatReg.Text)
+F.ODBC.con!rstWrite.Set!SAT_OT_HRS(V.Screen.FormColorado!txtSatOver.Text)
+F.ODBC.con!rstWrite.Set!SAT_DBL_HRS(V.Screen.FormColorado!txtSatDbl.Text)
+F.ODBC.con!rstWrite.Set!SUN_REG_HRS(V.Screen.FormColorado!txtSunReg.Text)
+F.ODBC.con!rstWrite.Set!SUN_OT_HRS(V.Screen.FormColorado!txtSunOver.Text)
+F.ODBC.con!rstWrite.Set!SUN_DBL_HRS(V.Screen.FormColorado!txtSunDbl.Text)
+F.ODBC.con!rstWrite.Set!HOL_REG_HRS(V.Screen.FormColorado!txtHolReg.Text)
+F.ODBC.con!rstWrite.Set!HOL_OT_HRS(V.Screen.FormColorado!txtHolOver.Text)
+F.ODBC.con!rstWrite.Set!HOL_DBL_HRS(V.Screen.FormColorado!txtHolDbl.Text)
+F.ODBC.con!rstWrite.Set!WKLY_REG_HRS(V.Screen.FormColorado!txtWLReg.Text)
+F.ODBC.con!rstWrite.Set!WKLY_OT_HRS(V.Screen.FormColorado!txtWLOver.Text)
+F.ODBC.con!rstWrite.Set!WKLY_DBL_HRS(V.Screen.FormColorado!txtWLDbl.Text)
+F.ODBC.con!rstWrite.Set!REG_CHK(V.Screen.FormColorado!chk1.Value)
+F.ODBC.con!rstWrite.Set!SICK_CHK(V.Screen.FormColorado!chk2.Value)
+F.ODBC.con!rstWrite.Set!VACA_CHK(V.Screen.FormColorado!chk3.Value)
+F.ODBC.con!rstWrite.Set!HOLI_CHK(V.Screen.FormColorado!chk4.Value)
+F.ODBC.con!rstWrite.Set!BONUS_CHK(V.Screen.FormColorado!chk5.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_1(V.Screen.FormColorado!chk6.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_2(V.Screen.FormColorado!chk7.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_3(V.Screen.FormColorado!chk8.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_4(V.Screen.FormColorado!chk9.Value)
+F.ODBC.con!rstWrite.Set!EXTRA_CHK_5(V.Screen.FormColorado!chk10.Value)
+F.ODBC.con!rstWrite.Set!HOL_HOURS(V.Screen.FormColorado!txtSpecHrs.Text)
+
+F.Intrinsic.Control.If(V.Screen.FormColorado!optShift.Value, =, "1")
+	V.Local.sOpt.Set("S")
+F.Intrinsic.Control.ElseIf(V.Screen.FormColorado!optCalendar.Value, =, "1")
+	V.Local.sOpt.Set("C")
+F.Intrinsic.Control.ElseIf(V.Screen.FormColorado!optSpecify.Value, =, "1")
+	V.Local.sOpt.Set("O")
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstWrite.Set!SHIFT_RULES(V.Local.sOpt)
+
+F.ODBC.con!rstWrite.Set!OVERRIDEOT(V.Screen.FormColorado!chkOverride.Value)
+F.ODBC.con!rstWrite.Set!ZEROPAY(V.Screen.FormColorado!chk11.Value)
+F.ODBC.con!rstWrite.Update
+
+F.ODBC.con!rstWrite.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click_Colorado.End
+
+Program.Sub.cmdExit_Click_Colorado.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(FormColorado_unload)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExit_Click_Colorado.End
+
+Program.Sub.FormColorado_UnLoad.Start
+F.Intrinsic.Control.Try
+
+GUI.FormColorado..Visible(False)
+GUI.FormChoice..Show
+GUI.FormChoice..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.FormColorado_UnLoad.End
+
+Program.Sub.PopulateColoradoOptions.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSql.Declare(String)
+V.Local.sOpt.Declare(String)
+
+'We are checking for data from the custom table. If it exists, populate it on screen. There should only be one row in the table.
+V.Local.sSql.Set("Select Top 1 * from GCG_4356_COLO_OTDT")
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rstRead", V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rstRead.EOF, =, False)
+	Gui.FormColorado.chkDaily.Value(V.ODBC.con!rstRead.FieldVal!PAY_DAILY_OT)
+	Gui.FormColorado.chkWeekly.Value(V.ODBC.con!rstRead.FieldVal!PAY_WEEKLY_OT)	
+	Gui.FormColorado.txtWDReg.Text(V.ODBC.con!rstRead.FieldVal!WEEKDAY_REG_HRS)
+	Gui.FormColorado.txtWDOver.Text(V.ODBC.con!rstRead.FieldVal!WEEKDAY_OT_HRS)
+	Gui.FormColorado.txtWDDbl.Text(V.ODBC.con!rstRead.FieldVal!WEEKDAY_DBL_HRS)
+	Gui.FormColorado.txtWLReg.Text(V.ODBC.con!rstRead.FieldVal!WKLY_REG_HRS)
+	Gui.FormColorado.txtWLOver.Text(V.ODBC.con!rstRead.FieldVal!WKLY_OT_HRS)
+	Gui.FormColorado.txtWLDbl.Text(V.ODBC.con!rstRead.FieldVal!WKLY_DBL_HRS)
+	Gui.FormColorado.txtSatReg.Text(V.ODBC.con!rstRead.FieldVal!SAT_REG_HRS)
+	Gui.FormColorado.txtSatOver.Text(V.ODBC.con!rstRead.FieldVal!SAT_OT_HRS)
+	Gui.FormColorado.txtSatDbl.Text(V.ODBC.con!rstRead.FieldVal!SAT_DBL_HRS)
+	Gui.FormColorado.txtSunReg.Text(V.ODBC.con!rstRead.FieldVal!SUN_REG_HRS)
+	Gui.FormColorado.txtSunOver.Text(V.ODBC.con!rstRead.FieldVal!SUN_OT_HRS)
+	Gui.FormColorado.txtSunDbl.Text(V.ODBC.con!rstRead.FieldVal!SUN_DBL_HRS)
+	Gui.FormColorado.txtHolReg.Text(V.ODBC.con!rstRead.FieldVal!SAT_REG_HRS)
+	Gui.FormColorado.txtHolOver.Text(V.ODBC.con!rstRead.FieldVal!SAT_REG_HRS)
+	Gui.FormColorado.txtHolDbl.Text(V.ODBC.con!rstRead.FieldVal!SAT_REG_HRS)
+	Gui.FormColorado.chk2.Value(V.ODBC.con!rstRead.FieldVal!SICK_CHK)
+	Gui.FormColorado.chk3.Value(V.ODBC.con!rstRead.FieldVal!VACA_CHK)
+	Gui.FormColorado.chk4.Value(V.ODBC.con!rstRead.FieldVal!HOLI_CHK)
+	Gui.FormColorado.chk5.Value(V.ODBC.con!rstRead.FieldVal!BONUS_CHK)
+	Gui.FormColorado.chk1.Value(V.ODBC.con!rstRead.FieldVal!REG_CHK)
+	Gui.FormColorado.chk6.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_1)
+	Gui.FormColorado.chk7.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_2)
+	Gui.FormColorado.chk8.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_3)
+	Gui.FormColorado.chk9.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_4)
+	Gui.FormColorado.chk10.Value(V.ODBC.con!rstRead.FieldVal!EXTRA_CHK_5)
+	
+	V.Local.sOpt.Set(V.ODBC.con!rstRead.FieldValTrim!SHIFT_RULES)
+	
+	F.Intrinsic.Control.SelectCase(V.Local.sOpt.Trim)
+	F.Intrinsic.Control.Case("S")
+		Gui.FormColorado.optShift.Value(1)
+		Gui.FormColorado.txtSpecHrs.Enabled(False)
+		Gui.FormColorado.chk11.Value(V.ODBC.con!rstRead.FieldVal!ZEROPAY)
+	F.Intrinsic.Control.Case("C")
+		Gui.FormColorado.optCalendar.Value(1)
+		Gui.FormColorado.txtSpecHrs.Enabled(False)
+		Gui.FormColorado.chk11.Enabled(False)
+	F.Intrinsic.Control.Case("O")
+		Gui.FormColorado.optSpecify.Value(1)
+		Gui.FormColorado.txtSpecHrs.Text(V.ODBC.con!rstRead.FieldValFloat!HOL_HOURS)
+		Gui.FormColorado.chk11.Enabled(False)
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.CallSub(chkdaily_click_Colorado)
+	F.Intrinsic.Control.CallSub(chkweekly_click_Colorado)
+	
+F.Intrinsic.Control.Else
+	Gui.FormColorado.optShift.Value(1)
+	Gui.FormColorado.txtSpecHrs.Enabled(False)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstRead.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "Callback", "FormChoice_Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.PopulateColoradoOptions.End
